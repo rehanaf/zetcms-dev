@@ -7,7 +7,7 @@
     <div class="container py-4">
         {{-- Header --}}
         @if(!empty($data['title']) || !empty($data['description']))
-            <div class="text-center max-w-lg mx-auto mb-5">
+            <div class="text-center max-w-lg mx-auto mb-5" data-aos="fade-up">
                 @if(!empty($data['description']))
                     <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">{{ $data['description'] }}</p>
                 @endif
@@ -31,7 +31,7 @@
         @if($plans->isNotEmpty())
             <div class="row justify-content-center g-4">
                 @foreach($plans as $plan)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $loop->index * 150 }}">
                         <div class="card h-100 border-0 rounded-4 {{ $plan->is_featured ? 'shadow-lg bg-chocolate-dark text-light' : 'shadow-sm bg-cream' }}" style="transition: transform 0.3s ease; {{ $plan->is_featured ? 'transform: scale(1.05); z-index: 2;' : '' }}">
                             <div class="card-body p-5 d-flex flex-column position-relative">
                                 

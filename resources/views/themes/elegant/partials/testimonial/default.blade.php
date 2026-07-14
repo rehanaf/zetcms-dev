@@ -17,7 +17,7 @@
 <section class="quote-section py-5 text-center position-relative" style="{{ $testiBgUrl ? "background-image: linear-gradient(rgba(30,18,15,0.9), rgba(30,18,15,0.9)), url('{$testiBgUrl}'); background-size: cover; background-position: center; background-attachment: fixed;" : "" }}">
     <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-lg-9">
+            <div class="col-lg-9" data-aos="zoom-in">
                 <i class="fa-solid fa-quote-left text-accent display-4 mb-3"></i>
                 
                 @if(!empty($data['title']))

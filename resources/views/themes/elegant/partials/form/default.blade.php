@@ -7,7 +7,7 @@
     <div class="container py-4">
         {{-- Header --}}
         @if(!empty($data['title']) || !empty($data['description']))
-            <div class="text-center max-w-lg mx-auto mb-5">
+            <div class="text-center max-w-lg mx-auto mb-5" data-aos="fade-up">
                 @if(!empty($data['title']))
                     <h2 class="display-5 text-chocolate mt-1 font-serif">{{ $data['title'] }}</h2>
                 @endif
@@ -36,7 +36,7 @@
                             </div>
                         @endif
 
-                        <div class="card bg-cream border-0 rounded-4 shadow-lg p-4 p-md-5">
+                        <div class="card bg-cream border-0 rounded-4 shadow-lg p-4 p-md-5" data-aos="fade-up" data-aos-delay="200">
                             <form method="POST" action="{{ url('/forms/' . $form->slug) }}">
                                 @csrf
                                 <div class="row g-4">

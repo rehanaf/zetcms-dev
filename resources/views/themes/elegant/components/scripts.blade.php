@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         
@@ -183,6 +184,17 @@
                 }
             });
         });
+
+        // ==========================================
+        // 4. AOS ANIMATION INIT
+        // ==========================================
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                once: true,
+                duration: 800,
+                offset: 50
+            });
+        }
 
     });
 

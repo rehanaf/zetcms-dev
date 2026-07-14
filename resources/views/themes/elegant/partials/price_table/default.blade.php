@@ -9,7 +9,7 @@
     <div class="container py-4">
         {{-- Header --}}
         @if(!empty($data['title']) || !empty($data['description']))
-            <div class="text-center max-w-lg mx-auto mb-5">
+            <div class="text-center max-w-lg mx-auto mb-5" data-aos="fade-up">
                 @if(!empty($data['description']))
                     <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">{{ $data['description'] }}</p>
                 @endif
@@ -23,7 +23,7 @@
         @if(!empty($data['categories']))
             <div class="row g-5">
                 @foreach($data['categories'] as $category)
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ $loop->index * 150 }}">
                         {{-- Category Title --}}
                         <div class="d-flex align-items-center mb-4">
                             @if(!empty($category['image_id']))

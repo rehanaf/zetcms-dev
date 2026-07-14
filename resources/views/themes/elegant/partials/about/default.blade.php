@@ -6,7 +6,7 @@
 <section class="py-5 bg-cream">
     <div class="container py-4">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-right">
                 @if(!empty($data['subtitle']))
                     <p class="text-accent fw-bold mb-2 fs-6" style="letter-spacing: 2px;">{{ $data['subtitle'] }}</p>
                 @endif
@@ -29,7 +29,7 @@
                     </a>
                 @endif
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 @if(!empty($data['image_id']))
                     @php $media = \App\Models\Media::find($data['image_id']); @endphp
                     @if($media)
