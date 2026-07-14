@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call([
+            RoleSeeder::class,
+        ]);
+
         User::updateOrCreate(
             ['email' => 'admin@example.com'],
             [
@@ -28,7 +32,6 @@ class DatabaseSeeder extends Seeder
         );
 
         $this->call([
-            RoleSeeder::class,
             SettingsSeeder::class,
             MenuSeeder::class,
             FormSeeder::class,
