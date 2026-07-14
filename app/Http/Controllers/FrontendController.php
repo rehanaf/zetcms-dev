@@ -234,12 +234,34 @@ class FrontendController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        \App\Models\FormSubmission::create([
+        $submission = \App\Models\FormSubmission::create([
             'form_id' => $form->id,
             'data' => $validatedData,
             'ip_address' => $request->ip(),
             'user_agent' => $request->userAgent(),
         ]);
+
+        $settings = is_string($form->settings) ? json_decode($form->settings, true) : $form->settings;
+        if (is_array($settings) && !empty($settings['webhook_url'])) {
+            try {
+                \Illuminate\Support\Facades\Http::post($settings['webhook_url'], [
+                    'form_name' => $form->name,
+                    'submission_id' => $submission->id,
+                    'data' => $validatedData,
+                    'ip_address' => $request->ip(),
+                    'created_at' => $submission->created_at->toIso8601String(),
+                ]);
+            } catch (\Exception $e) {
+                \Illuminate\Support\Facades\Log::error('Webhook failed for form ' . $form->name . ': ' . $e->getMessage());
+            }
+        }
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => $form->success_message ?? 'Formulir berhasil dikirim!'
+            ]);
+        }
 
         return back()->with('form_success', $form->success_message ?? 'Formulir berhasil dikirim!');
     }

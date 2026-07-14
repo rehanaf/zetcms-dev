@@ -1,4 +1,5 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         
@@ -195,6 +196,81 @@
                 offset: 50
             });
         }
+
+        // ==========================================
+        // 5. AJAX FORM SUBMISSION WITH SWEETALERT
+        // ==========================================
+        const ajaxForms = document.querySelectorAll('.ajax-form');
+        ajaxForms.forEach(form => {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Mengirim...';
+                submitBtn.disabled = true;
+
+                form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+                form.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: result.message || 'Pesan Anda berhasil dikirim.',
+                            icon: 'success',
+                            confirmButtonColor: '#D4AF37',
+                            confirmButtonText: 'Tutup'
+                        });
+                        form.reset();
+                    } else {
+                        if (result.errors) {
+                            Object.keys(result.errors).forEach(key => {
+                                const input = form.querySelector(`[name="${key}"]`);
+                                if (input) {
+                                    input.classList.add('is-invalid');
+                                    const errorDiv = document.createElement('div');
+                                    errorDiv.className = 'invalid-feedback font-sans small mt-1';
+                                    errorDiv.innerText = result.errors[key][0];
+                                    input.parentNode.appendChild(errorDiv);
+                                }
+                            });
+                        }
+                        
+                        Swal.fire({
+                            title: 'Oops!',
+                            text: result.message || 'Terjadi kesalahan, silakan periksa isian Anda.',
+                            icon: 'error',
+                            confirmButtonColor: '#3E2723',
+                            confirmButtonText: 'Tutup'
+                        });
+                    }
+                } catch (error) {
+                    Swal.fire({
+                        title: 'Error Server',
+                        text: 'Terjadi masalah pada server. Silakan coba lagi nanti.',
+                        icon: 'error',
+                        confirmButtonColor: '#3E2723',
+                        confirmButtonText: 'Tutup'
+                    });
+                } finally {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        });
 
     });
 

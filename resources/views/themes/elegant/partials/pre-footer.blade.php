@@ -38,14 +38,9 @@
                     <div class="bg-white p-4 p-md-5 rounded shadow-sm border border-light position-relative">
                         <h3 class="font-serif text-chocolate mb-4"><i class="fa-solid fa-envelope-open-text text-accent me-2"></i>{{ $contactForm->name ?? 'Form' }}</h3>
                         
-                        @if(session('form_success') || $errors->any())
-                            <div class="alert alert-{{ session('form_success') ? 'success' : 'danger' }} alert-dismissible fade show" role="alert">
-                                {{ session('form_success') ?? 'Silakan periksa kembali isian formulir Anda.' }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
 
-                        <form method="POST" action="{{ url('/forms/' . $contactForm->slug) }}" class="row g-3">
+
+                        <form method="POST" action="{{ url('/forms/' . $contactForm->slug) }}" class="row g-3 ajax-form">
                             @csrf
                             @foreach($contactForm->fields as $field)
                                 <div class="col-12">

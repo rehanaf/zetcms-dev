@@ -23,21 +23,10 @@
             @if($form)
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        {{-- Notifikasi --}}
-                        @if(session('form_success') || $errors->any())
-                            <div class="alert {{ session('form_success') ? 'alert-success border-success text-success bg-white' : 'alert-danger border-danger text-danger bg-white' }} rounded shadow-sm alert-dismissible fade show mb-4 font-sans" role="alert">
-                                @if(session('form_success'))
-                                    <i class="fa-solid fa-circle-check me-2"></i> {{ session('form_success') }}
-                                @endif
-                                @if($errors->any())
-                                    <i class="fa-solid fa-circle-xmark me-2"></i> Ada kesalahan pada form Anda. Silakan cek kembali.
-                                @endif
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
+
 
                         <div class="card bg-cream border-0 rounded-4 shadow-lg p-4 p-md-5" data-aos="fade-up" data-aos-delay="200">
-                            <form method="POST" action="{{ url('/forms/' . $form->slug) }}">
+                            <form method="POST" action="{{ url('/forms/' . $form->slug) }}" class="ajax-form">
                                 @csrf
                                 <div class="row g-4">
                                     @foreach($form->fields as $field)
