@@ -7,7 +7,7 @@
                     $siteName = \App\Models\Setting::get('site_name', config('app.name', 'Dapoer Cendana'));
                 @endphp
                 @if($siteLogo)
-                    <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" style="height: 80px; width: auto;" class="mb-3">
+                    <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" style="height: 40px; width: auto;" class="mb-3">
                 @else
                     <h3 class="font-serif text-accent mb-3">{{ $siteName }}</h3>
                 @endif
