@@ -244,24 +244,48 @@ class FrontendController extends Controller
         $settings = is_string($form->settings) ? json_decode($form->settings, true) : $form->settings;
         if (is_array($settings) && !empty($settings['webhook_url'])) {
             try {
-                $payload = [
-                    'form_name' => $form->name,
-                    'submission_id' => $submission->id,
-                    'data' => $validatedData,
-                    'ip_address' => $request->ip(),
-                    'created_at' => $submission->created_at->toIso8601String(),
-                ];
+                $method = strtoupper($settings['webhook_method'] ?? 'POST');
+                $headers = is_array($settings['webhook_headers'] ?? null) ? $settings['webhook_headers'] : [];
+                $payload = [];
 
-                if (!empty($settings['webhook_text_template'])) {
-                    $text = $settings['webhook_text_template'];
-                    foreach ($validatedData as $key => $value) {
-                        $text = str_replace("{{{$key}}}", is_array($value) ? implode(', ', $value) : $value, $text);
+                if (isset($settings['webhook_payload']) && is_array($settings['webhook_payload'])) {
+                    $customPayload = $settings['webhook_payload'];
+                    array_walk_recursive($customPayload, function(&$item, $key) use ($validatedData) {
+                        if (is_string($item)) {
+                            foreach ($validatedData as $vk => $vv) {
+                                $valStr = is_array($vv) ? implode(', ', $vv) : (string)$vv;
+                                $item = str_replace("{{{$vk}}}", $valStr, $item);
+                            }
+                        }
+                    });
+                    $payload = $customPayload;
+                } else {
+                    $payload = [
+                        'form_name' => $form->name,
+                        'submission_id' => $submission->id,
+                        'data' => $validatedData,
+                        'ip_address' => $request->ip(),
+                        'created_at' => $submission->created_at->toIso8601String(),
+                    ];
+
+                    if (!empty($settings['webhook_text_template'])) {
+                        $text = $settings['webhook_text_template'];
+                        foreach ($validatedData as $key => $value) {
+                            $text = str_replace("{{{$key}}}", is_array($value) ? implode(', ', $value) : (string)$value, $text);
+                        }
+                        $payload['text'] = $text;
+                        $payload['content'] = $text;
                     }
-                    $payload['text'] = $text;
-                    $payload['content'] = $text; // For Discord support
                 }
 
-                \Illuminate\Support\Facades\Http::post($settings['webhook_url'], $payload);
+                $req = \Illuminate\Support\Facades\Http::withHeaders($headers);
+                if ($method === 'GET') {
+                    $req->get($settings['webhook_url'], $payload);
+                } elseif ($method === 'PUT') {
+                    $req->put($settings['webhook_url'], $payload);
+                } else {
+                    $req->post($settings['webhook_url'], $payload);
+                }
             } catch (\Exception $e) {
                 \Illuminate\Support\Facades\Log::error('Webhook failed for form ' . $form->name . ': ' . $e->getMessage());
             }
