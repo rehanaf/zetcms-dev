@@ -83,7 +83,7 @@ INSERT INTO settings VALUES(16,'seo_meta_keywords','cms, laravel, filament, webs
 INSERT INTO settings VALUES(17,'seo_og_image',NULL,'text','seo','2026-07-14 11:12:50','2026-07-14 11:21:38');
 INSERT INTO settings VALUES(18,'seo_google_analytics_id',NULL,'text','seo','2026-07-14 11:12:50','2026-07-14 11:21:38');
 INSERT INTO settings VALUES(19,'seo_google_tag_manager_id',NULL,'text','seo','2026-07-14 11:12:50','2026-07-14 11:21:38');
-INSERT INTO settings VALUES(20,'seo_robots_txt',unistr('User-agent: *\u000aAllow: /'),'text','seo','2026-07-14 11:12:50','2026-07-14 11:21:38');
+INSERT INTO settings VALUES(20,'seo_robots_txt','User-agent: *\nAllow: /','text','seo','2026-07-14 11:12:50','2026-07-14 11:21:38');
 INSERT INTO settings VALUES(21,'social_facebook',NULL,'text','social','2026-07-14 11:12:51','2026-07-14 11:21:38');
 INSERT INTO settings VALUES(22,'social_instagram',NULL,'text','social','2026-07-14 11:12:51','2026-07-14 11:21:38');
 INSERT INTO settings VALUES(23,'social_twitter',NULL,'text','social','2026-07-14 11:12:51','2026-07-14 11:21:38');
