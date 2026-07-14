@@ -782,4 +782,29 @@
         left: 30px;
         z-index: 1000;
     }
+    /* Custom Content Formatting */
+    .content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4 {
+        color: var(--color-chocolate);
+        font-family: var(--font-serif);
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .content-formatted p {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+    .content-formatted a {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+    .content-formatted ul, .content-formatted ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+    }
+    .content-formatted img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
 </style>
