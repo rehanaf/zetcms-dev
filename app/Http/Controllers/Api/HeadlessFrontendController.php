@@ -258,13 +258,24 @@ class HeadlessFrontendController extends Controller
         $settings = is_string($form->settings) ? json_decode($form->settings, true) : $form->settings;
         if (is_array($settings) && !empty($settings['webhook_url'])) {
             try {
-                \Illuminate\Support\Facades\Http::post($settings['webhook_url'], [
+                $payload = [
                     'form_name' => $form->name,
                     'submission_id' => $submission->id,
                     'data' => $validatedData,
                     'ip_address' => $request->ip(),
                     'created_at' => $submission->created_at->toIso8601String(),
-                ]);
+                ];
+
+                if (!empty($settings['webhook_text_template'])) {
+                    $text = $settings['webhook_text_template'];
+                    foreach ($validatedData as $key => $value) {
+                        $text = str_replace("{{{$key}}}", is_array($value) ? implode(', ', $value) : $value, $text);
+                    }
+                    $payload['text'] = $text;
+                    $payload['content'] = $text; // For Discord support
+                }
+
+                \Illuminate\Support\Facades\Http::post($settings['webhook_url'], $payload);
             } catch (\Exception $e) {
                 \Illuminate\Support\Facades\Log::error('Webhook failed for form ' . $form->name . ': ' . $e->getMessage());
             }
