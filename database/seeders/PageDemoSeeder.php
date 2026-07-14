@@ -148,6 +148,63 @@ class PageDemoSeeder extends Seeder
                             ]
                         ]
                     ],
+                    [
+                        'type' => 'price_table',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Cita Rasa Dapoer Cendana',
+                            'categories' => [
+                                [
+                                    'title' => 'Makanan Utama & Signature',
+                                    'items' => [
+                                        ['name' => 'Nasi Goreng Cendana Royal', 'price' => 'IDR 85K'],
+                                        ['name' => 'Sop Buntut Garang Asam', 'price' => 'IDR 125K'],
+                                        ['name' => 'Bebek Goreng Rempah Madura', 'price' => 'IDR 95K'],
+                                        ['name' => 'Gurame Bakar Sambal Cendana', 'price' => 'IDR 110K'],
+                                    ]
+                                ],
+                                [
+                                    'title' => 'Pencuci Mulut & Minuman',
+                                    'items' => [
+                                        ['name' => 'Es Dawet Ayu Cendana', 'price' => 'IDR 35K'],
+                                        ['name' => 'Ketan Durian Lumer', 'price' => 'IDR 45K'],
+                                        ['name' => 'Wedang Secang Rempah Wangi', 'price' => 'IDR 30K'],
+                                        ['name' => 'Cendana Iced Herbal Tea', 'price' => 'IDR 28K'],
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        'type' => 'testimonial',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Testimonials',
+                            'source' => 'manual',
+                            'manual_testimonials' => [
+                                ['name' => 'H. Rahmad Syahputra', 'content' => 'Pengalaman luar biasa saat menyelenggarakan pernikahan adik saya di Dapoer Cendana. Makanan prasmanan sangat lezat, koordinasi staf sangat profesional sehingga tidak butuh dekorasi berlebihan.'],
+                                ['name' => 'Kusuma Wardhani, M.B.A.', 'content' => 'Kami menyewa ruang meeting selama 3 hari berturut-turut untuk rapat direksi tahunan. Koneksi internetnya sangat cepat dan stabil, fasilitas audio-visual mutakhir.'],
+                                ['name' => 'Budi Hartono', 'content' => 'Pelatihan tim penjualan kami berjalan dengan sangat sukses. Layout ruang training dapat disesuaikan dengan kebutuhan interaktif kami.'],
+                                ['name' => 'Ibu Hj. Aminah Salim', 'content' => 'Tempat terbaik untuk syukuran keluarga. Karpet lesehan yang disediakan sangat tebal, bersih, dan wangi. Sistem tata suaranya juga jernih.'],
+                            ]
+                        ]
+                    ],
+                    [
+                        'type' => 'pricing',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Promo Khusus dapoercendana.id',
+                            'pricing_ids' => [1, 2, 3]
+                        ]
+                    ],
+                    [
+                        'type' => 'form',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Hubungi Dapoer Cendana',
+                            'form_id' => 1
+                        ]
+                    ]
                 ],
                 'status' => 'published',
                 'published_at' => now(),
