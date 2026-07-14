@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapoer Cendana | Event Hall, Meeting Space & Restaurant</title>
+    <meta name="description" content="Dapoer Cendana - Event Hall & Meeting Space premium di dapoercendana.id. Tempat terbaik untuk Wedding, Meeting, Training, Pengajian, dan Kuliner Istimewa.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts (Cormorant Garamond & Albert Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --color-primary: #3E2723;       /* Deep Rich Chocolate */
+            --color-secondary: #5D4037;     /* Warm Medium Brown */
+            --color-accent: #D4AF37;        /* Elegant Gold */
+            --color-accent-hover: #C5A880;  /* Champagne Gold */
+            --color-light: #FDFBF7;         /* Luxury Soft Ivory Cream */
+            --color-dark: #1E120F;          /* Dark Chocolate / Near Black */
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Albert Sans', sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;       /* Offset scroll target agar tidak tertutup fixed navbar */
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            padding-top: 75px;              /* Cadangan ruang agar konten tidak tertutup fixed navbar */
+        }
+
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 70px;          /* Jarak kompensasi mobile yang lebih rapat */
+            }
+        }
+
+        /* Typography Styling without default CapLock */
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .bg-chocolate-dark {
+            background-color: var(--color-dark);
+        }
+
+        .bg-chocolate {
+            background-color: var(--color-primary);
+        }
+
+        .bg-cream {
+            background-color: var(--color-light);
+        }
+
+        /* Customized Buttons - Underlines Removed */
+        .btn-elegant {
+            background-color: var(--color-accent);
+            color: var(--color-dark) !important;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: 1px solid var(--color-accent);
+            transition: var(--transition-smooth);
+            text-decoration: none !important;
+        }
+
+        .btn-elegant:hover {
+            background-color: transparent;
+            color: var(--color-accent) !important;
+            border-color: var(--color-accent);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+            text-decoration: none !important;
+        }
+
+        .btn-elegant-outline {
+            background-color: transparent;
+            color: var(--color-light) !important;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: var(--transition-smooth);
+            text-decoration: none !important;
+        }
+
+        .btn-elegant-outline:hover {
+            background-color: var(--color-light);
+            color: var(--color-dark) !important;
+            border-color: var(--color-light);
+            text-decoration: none !important;
+        }
+
+        /* Custom Navigation */
+        .navbar {
+            background-color: rgba(30, 18, 15, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition-smooth);
+            padding-top: calc(15px + env(safe-area-inset-top, 0px)); /* Jarak aman dari notch/poni hp */
+            padding-bottom: 15px;
+        }
+
+        .navbar-brand span {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            text-decoration: none !important;
+        }
+
+        .nav-link {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: rgba(253, 251, 247, 0.8) !important;
+            margin: 0 10px;
+            transition: var(--transition-smooth);
+            position: relative;
+            text-decoration: none !important;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-accent) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background-color: var(--color-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Disable default Bootstrap dropdown caret to avoid duplicate/weird ugly lines */
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        /* Custom Hover Dropdown for Desktop Menu */
+        .dropdown-menu {
+            display: none;
+            background-color: var(--color-dark) !important;
+            border: 1px solid rgba(212, 175, 55, 0.3) !important;
+            border-radius: 6px;
+            margin-top: 10px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 8px 0;
+            position: absolute;
+            left: 0;
+            z-index: 1000;
+        }
+
+        @media (min-width: 992px) {
+            .dropdown-menu {
+                display: block !important;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(12px);
+                transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s;
+                pointer-events: none;
+            }
+
+            /* Triggers only when hovering the parent li item on desktop screens */
+            .nav-item.dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+
+        .dropdown-item {
+            color: rgba(253, 251, 247, 0.8) !important;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            transition: var(--transition-smooth);
+            text-decoration: none !important;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-accent) !important;
+            text-decoration: none !important;
+            padding-left: 25px;
+        }
+
+        @media (min-width: 992px) {
+            .dropdown-menu {
+                display: block !important;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(12px);
+                transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s;
+                pointer-events: none;
+                margin-top: 0 !important; /* Menghapus margin fisik bawaan di desktop */
+            }
+
+            /* Membuat jembatan hover transparan agar menu tidak tertutup saat kursor bergerak turun */
+            .dropdown-menu::before {
+                content: '';
+                position: absolute;
+                top: -25px;
+                left: 0;
+                right: 0;
+                height: 25px;
+                background: transparent;
+            }
+
+            /* Triggers only when hovering the parent li item on desktop screens */
+            .nav-item.dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(6px); /* Jarak mengambang yang pas dan aman */
+                pointer-events: auto;
+            }
+        }
+
+        .navbar-toggler {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 6px 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Custom Offcanvas Drawer Styling */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 18, 15, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1040;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .drawer-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .offcanvas-drawer {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--color-dark);
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1050;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 24px;
+        }
+
+        .offcanvas-drawer.show {
+            transform: translateX(-320px);
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .drawer-close {
+            background: none;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--color-accent);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .drawer-close:hover {
+            background: var(--color-accent);
+            color: var(--color-dark);
+            border-color: var(--color-accent);
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .drawer-link {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgba(253, 251, 247, 0.85);
+            text-decoration: none !important;
+            transition: var(--transition-smooth);
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .drawer-link:hover, .drawer-link.active {
+            color: var(--color-accent);
+            padding-left: 8px;
+        }
+
+        /* Drawer Nested Dropdown Submenu */
+        .drawer-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-left: 1px solid rgba(212, 175, 55, 0.15);
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        .drawer-submenu.show {
+            max-height: 250px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .drawer-sublink {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: rgba(253, 251, 247, 0.65);
+            text-decoration: none !important;
+            transition: var(--transition-smooth);
+            padding: 6px 0;
+        }
+
+        .drawer-sublink:hover {
+            color: var(--color-accent);
+            padding-left: 5px;
+        }
+
+        /* Custom Bulletproof Carousel Fade Engine */
+        .hero-carousel {
+            position: relative;
+            background-color: var(--color-dark);
+            height: 90vh;
+            min-height: 550px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero-carousel {
+                height: 80vh;
+            }
+        }
+
+        .carousel-inner-custom {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item-custom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
+            pointer-events: none;
+        }
+
+        .carousel-item-custom.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        .carousel-item-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(30, 18, 15, 0.5), rgba(30, 18, 15, 0.85));
+        }
+
+        .carousel-caption-custom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+            z-index: 10;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        /* Custom Carousel Controls */
+        .carousel-control-custom {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 15;
+            background: rgba(30, 18, 15, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--color-accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .carousel-control-custom:hover {
+            background: var(--color-accent);
+            color: var(--color-dark);
+            border-color: var(--color-accent);
+        }
+
+        .carousel-control-prev-custom { left: 20px; }
+        .carousel-control-next-custom { right: 20px; }
+
+        @media (max-width: 576px) {
+            .carousel-control-custom { display: none; }
+        }
+
+        /* Custom Carousel Indicators */
+        .carousel-indicators-custom {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-indicators-custom button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid var(--color-accent);
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .carousel-indicators-custom button.active {
+            background: var(--color-accent);
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* Decorative components */
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-accent);
+            margin: 20px auto;
+        }
+
+        .divider-left {
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-accent);
+            margin: 15px 0;
+        }
+
+        /* Feature Grid Cards */
+        .feature-card {
+            background-color: #fff;
+            border: 1px solid rgba(93, 64, 55, 0.1);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: var(--transition-smooth);
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(62, 39, 35, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background-color: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(62, 39, 35, 0.08);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover .feature-icon-wrapper {
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+            transform: scale(1.05);
+        }
+
+        .feature-list {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--color-secondary);
+        }
+
+        .feature-list li i {
+            color: var(--color-accent);
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        /* Menu Section Custom Styling */
+        .menu-item-box {
+            padding: 15px;
+            border-bottom: 1px dashed rgba(93, 64, 55, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .menu-item-box:hover {
+            background-color: rgba(212, 175, 55, 0.05);
+            border-bottom-style: solid;
+        }
+
+        .menu-price {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Testimonials / Quote Section */
+        .quote-section {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            background-image: linear-gradient(rgba(30, 18, 15, 0.95), rgba(30, 18, 15, 0.95)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-top: 2px solid var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        /* Promo section styling */
+        .promo-card {
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+            color: var(--color-light);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-smooth);
+        }
+
+        .promo-card::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+            bottom: -50px;
+            right: -50px;
+            z-index: -1;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+        }
+
+        .promo-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .promo-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .promo-card:hover .promo-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 5;
+            font-size: 0.8rem;
+            padding: 8px 14px;
+            border-radius: 4px;
+            background-color: var(--color-accent) !important;
+            color: var(--color-dark) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Custom Design */
+        .form-control, .form-select {
+            background-color: rgba(253, 251, 247, 0.5);
+            border: 1px solid rgba(93, 64, 55, 0.2);
+            padding: 12px 15px;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+            color: var(--color-dark);
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #fff;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+            outline: none;
+        }
+
+        /* Map & Info Wrapper */
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            height: 100%;
+            min-height: 380px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: 0;
+        }
+
+        /* Scroll top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none !important;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-dark);
+            color: var(--color-accent);
+        }
+
+        /* Notification Toast Container */
+        .toast-container-custom {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <span class="text-accent fw-bold m-0 pe-2">Dapoer Cendana</span>
+            </a>
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation" id="drawerTrigger">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang Kami</a>
+                    </li>
+                    <!-- Nested Navigation Item (Dropdown with Desktop Hover support) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button">
+                            Layanan <i class="fa-solid fa-chevron-down ms-1 fs-8 text-accent"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#layanan-wedding" onclick="scrollToElement('layanan')">Wedding</a></li>
+                            <li><a class="dropdown-item" href="#layanan-meeting" onclick="scrollToElement('layanan')">Meeting</a></li>
+                            <li><a class="dropdown-item" href="#layanan-training" onclick="scrollToElement('layanan')">Training</a></li>
+                            <li><a class="dropdown-item" href="#layanan-pengajian" onclick="scrollToElement('layanan')">Pengajian</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promo">Berita & Promo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Hubungi</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn-elegant py-2 px-4" href="#kontak"><i class="fa-solid fa-calendar-check me-2"></i>Booking</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Drawer Mobile Menu -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="offcanvas-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <span class="text-accent fw-bold font-serif fs-4 m-0">Dapoer Cendana</span>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="drawer-nav">
+            <a class="drawer-link active" href="#hero">Beranda</a>
+            <a class="drawer-link" href="#tentang">Tentang Kami</a>
+            
+            <!-- Drawer Nested Dropdown Item -->
+            <div>
+                <a class="drawer-link" id="drawerDropdownToggle">
+                    Layanan <i class="fa-solid fa-chevron-down fs-8 text-accent transition-transform" id="drawerChevron" style="transition: transform 0.3s ease;"></i>
+                </a>
+                <div class="drawer-submenu" id="drawerSubmenu">
+                    <a class="drawer-sublink" href="#layanan-wedding" onclick="scrollToElement('layanan')">Wedding</a>
+                    <a class="drawer-sublink" href="#layanan-meeting" onclick="scrollToElement('layanan')">Meeting</a>
+                    <a class="drawer-sublink" href="#layanan-training" onclick="scrollToElement('layanan')">Training</a>
+                    <a class="drawer-sublink" href="#layanan-pengajian" onclick="scrollToElement('layanan')">Pengajian</a>
+                </div>
+            </div>
+
+            <a class="drawer-link" href="#menu">Menu Kami</a>
+            <a class="drawer-link" href="#promo">Berita & Promo</a>
+            <a class="drawer-link" href="#kontak">Hubungi</a>
+            
+            <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
+                <a class="btn-elegant py-3 px-4 w-100 text-center d-block" href="#kontak"><i class="fa-solid fa-calendar-check me-2"></i>Booking</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Slider -->
+    <section id="hero" class="hero-carousel">
+        <div class="carousel-inner-custom">
+            <!-- Slide 1: Wedding -->
+            <div class="carousel-item-custom active" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-caption-custom">
+                    <p class="text-accent fw-semibold m-0 fs-5 mb-2">Exclusive Event & Wedding Hall</p>
+                    <h1 class="hero-title">Rayakan momen terindah hidup Anda</h1>
+                    <p class="lead text-light-50 max-w-2xl mx-auto mb-4 font-sans fs-5">Dapoer Cendana menghadirkan kemewahan ruang, suasana elegan, dan layanan premium untuk hari pernikahan impian Anda.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#layanan" class="btn-elegant">Eksplor Layanan</a>
+                        <a href="#kontak" class="btn-elegant-outline">Hubungi Kami</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Meeting -->
+            <div class="carousel-item-custom" style="background-image: url('https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-caption-custom">
+                    <p class="text-accent fw-semibold m-0 fs-5 mb-2">Professional Meeting Space</p>
+                    <h1 class="hero-title">Ruang pertemuan representatif & modern</h1>
+                    <p class="lead text-light-50 max-w-2xl mx-auto mb-4 font-sans fs-5">Tingkatkan produktivitas bisnis Anda dengan ruang rapat premium yang didukung fasilitas audio-visual mutakhir dan hidangan kelas dunia.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#layanan" class="btn-elegant">Paket Corporate</a>
+                        <a href="#kontak" class="btn-elegant-outline">Konsultasi Rapat</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Fine Dining -->
+            <div class="carousel-item-custom" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-caption-custom">
+                    <p class="text-accent fw-semibold m-0 fs-5 mb-2">Exquisite Culinary Experience</p>
+                    <h1 class="hero-title">Perpaduan cita rasa autentik & elegansi</h1>
+                    <p class="lead text-light-50 max-w-2xl mx-auto mb-4 font-sans fs-5">Manjakan selera Anda dengan sajian kuliner bercita rasa istimewa racikan Chef profesional kami di suasana restoran yang hangat.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#menu" class="btn-elegant">Lihat Menu</a>
+                        <a href="#kontak" class="btn-elegant-outline">Reservasi Meja</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controls -->
+        <div class="carousel-control-custom carousel-control-prev-custom">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="carousel-control-custom carousel-control-next-custom">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators-custom">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+    </section>
+
+    <!-- Welcome & About Section -->
+    <section id="tentang" class="py-5 bg-cream">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <p class="text-accent fw-bold mb-2 fs-6" style="letter-spacing: 2px;">Selamat Datang di Dapoer Cendana</p>
+                    <h2 class="display-5 text-chocolate mb-3">Sinergi antara Kuliner Berkelas dan Ruang Acara Eksklusif</h2>
+                    <div class="divider-left"></div>
+                    <p class="lead text-muted font-sans fs-6 mb-4">
+                        Berlokasi strategis, <strong>Dapoer Cendana</strong> merupakan destinasi prima yang memadukan keindahan restoran bernuansa estetika kolonial-modern dengan fungsionalitas ruang serbaguna tingkat tinggi. 
+                    </p>
+                    <p class="text-muted font-sans fs-6 mb-4">
+                        Kami menyediakan area elegan untuk berbagai perhelatan istimewa Anda, mulai dari pernikahan megah, rapat bisnis korporat yang kondusif, pelatihan profesional, hingga pengajian keluarga besar yang khidmat. Kami hadir untuk memastikan setiap momen berharga Anda di dapoercendana.id berjalan dengan sempurna.
+                    </p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6 d-flex align-items-start">
+                            <i class="fa-solid fa-award text-accent fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold m-0 fs-5 text-chocolate">Fasilitas Premium</h5>
+                                <small class="text-muted">Sound system kelas atas & proyektor resolusi tinggi.</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-flex align-items-start">
+                            <i class="fa-solid fa-utensils text-accent fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold m-0 fs-5 text-chocolate">Catering Mandiri</h5>
+                                <small class="text-muted">Hidangan eksklusif dikurasi oleh Chef bersertifikat.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#kontak" class="btn-elegant">Kunjungi Kami</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative p-4">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 border-accent rounded-3" style="transform: translate(-15px, -15px); z-index: 1;"></div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Dapoer Cendana Interior" class="img-fluid rounded-3 position-relative shadow-lg" style="z-index: 2; object-fit: cover; height: 450px; width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Showcase Section -->
+    <section id="layanan" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center max-w-lg mx-auto mb-5">
+                <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">Layanan Serbaguna Kami</p>
+                <h2 class="display-5 text-chocolate mt-1">Pilihan Ruang & Acara Sesuai Kebutuhan Anda</h2>
+                <div class="divider"></div>
+                <p class="text-muted font-sans">Kami mendesain setiap paket layanan dengan dedikasi penuh guna melampaui harapan Anda.</p>
+            </div>
+
+            <!-- Feature Cards Grid with descriptive icons and bullets -->
+            <div class="row g-4">
+                <!-- Feature 1: Wedding -->
+                <div class="col-lg-3 col-md-6" id="layanan-wedding">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                        </div>
+                        <h3 class="h4 text-chocolate mb-3">Wedding Hall</h3>
+                        <p class="text-muted font-sans mb-3 small">Rayakan perhelatan janji suci romantis Anda dalam suasana megah yang intim dan artistik bersama keluarga besar.</p>
+                        <hr class="border-secondary opacity-25">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Kapasitas s.d 500 tamu</li>
+                            <li><i class="fa-solid fa-check"></i> AC sentral full dingin</li>
+                            <li><i class="fa-solid fa-check"></i> Ruang rias eksklusif</li>
+                            <li><i class="fa-solid fa-check"></i> Menu prasmanan mewah</li>
+                        </ul>
+                        <div class="mt-4 pt-2">
+                            <a href="#kontak" class="btn-elegant py-2 px-3 w-100 text-center d-block fs-7" onclick="fillEventForm('Wedding')">Tanyakan Paket Wedding</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Meeting -->
+                <div class="col-lg-3 col-md-6" id="layanan-meeting">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="h4 text-chocolate mb-3">Meeting Space</h3>
+                        <p class="text-muted font-sans mb-3 small">Tingkatkan performa bisnis Anda melalui ruang pertemuan representatif dengan kelengkapan mutakhir.</p>
+                        <hr class="border-secondary opacity-25">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Smart TV & Projector</li>
+                            <li><i class="fa-solid fa-check"></i> High-speed Wi-Fi</li>
+                            <li><i class="fa-solid fa-check"></i> Coffee break & lunch</li>
+                            <li><i class="fa-solid fa-check"></i> Memo pad & ATK set</li>
+                        </ul>
+                        <div class="mt-4 pt-2">
+                            <a href="#kontak" class="btn-elegant py-2 px-3 w-100 text-center d-block fs-7" onclick="fillEventForm('Meeting')">Tanyakan Paket Meeting</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Training -->
+                <div class="col-lg-3 col-md-6" id="layanan-training">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="h4 text-chocolate mb-3">Training Center</h3>
+                        <p class="text-muted font-sans mb-3 small">Konfigurasi ruangan fleksibel yang ramah untuk edukasi, seminar interaktif, dan sertifikasi tim.</p>
+                        <hr class="border-secondary opacity-25">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Sistem audio nirkabel</li>
+                            <li><i class="fa-solid fa-check"></i> Pointer & layar lebar</li>
+                            <li><i class="fa-solid fa-check"></i> Snack premium bervariasi</li>
+                            <li><i class="fa-solid fa-check"></i> Resepsionis khusus</li>
+                        </ul>
+                        <div class="mt-4 pt-2">
+                            <a href="#kontak" class="btn-elegant py-2 px-3 w-100 text-center d-block fs-7" onclick="fillEventForm('Training')">Tanyakan Paket Training</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Pengajian -->
+                <div class="col-lg-3 col-md-6" id="layanan-pengajian">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-mosque"></i>
+                        </div>
+                        <h3 class="h4 text-chocolate mb-3">Pengajian & Aqiqah</h3>
+                        <p class="text-muted font-sans mb-3 small">Selenggarakan doa bersama, tasyakuran aqiqah, dan arisan keluarga dalam nuansa bersih nan menenangkan.</p>
+                        <hr class="border-secondary opacity-25">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Karpet tebal bersih</li>
+                            <li><i class="fa-solid fa-check"></i> Sound system jernih</li>
+                            <li><i class="fa-solid fa-check"></i> Mimbar ceramah kayu</li>
+                            <li><i class="fa-solid fa-check"></i> Nasi box / Buffet khas</li>
+                        </ul>
+                        <div class="mt-4 pt-2">
+                            <a href="#kontak" class="btn-elegant py-2 px-3 w-100 text-center d-block fs-7" onclick="fillEventForm('Pengajian')">Tanyakan Paket Pengajian</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section (Restaurant Spotlight) -->
+    <section id="menu" class="py-5 bg-cream">
+        <div class="container py-4">
+            <div class="text-center max-w-lg mx-auto mb-5">
+                <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">Cita Rasa Dapoer Cendana</p>
+                <h2 class="display-5 text-chocolate mt-1">Sajian Istimewa untuk Setiap Acara</h2>
+                <div class="divider"></div>
+                <p class="text-muted font-sans">Kami meramu rasa tradisi berpadu teknik modern demi menciptakan seni kuliner yang menggugah selera.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Main Culinary Category Left -->
+                <div class="col-lg-6">
+                    <h3 class="font-serif text-chocolate border-bottom pb-2 mb-4"><i class="fa-solid fa-leaf text-accent me-2"></i>Makanan Utama & Signature</h3>
+                    
+                    <div class="menu-item-box d-flex justify-content-between align-items-center">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Nasi Goreng Cendana Royal</h5>
+                            <small class="text-muted font-sans">Nasi goreng beraroma rempah pilihan dengan topping sate sapi premium, telur mata sapi, dan kerupuk udang.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 85K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Sop Buntut Garang Asam</h5>
+                            <small class="text-muted font-sans">Potongan buntut sapi pilihan dengan kaldu bening yang kaya rempah, berpadu rasa asam pedas nan segar.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 125K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Bebek Goreng Rempah Madura</h5>
+                            <small class="text-muted font-sans">Bebek empuk bumbu ungkep tradisional yang digoreng garing, disajikan dengan bumbu hitam pedas gurih.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 95K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Gurame Bakar Sambal Cendana</h5>
+                            <small class="text-muted font-sans">Gurame segar bakar bumbu madu kecap manis, disandingkan dengan 3 jenis sambal racikan khas.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 110K</div>
+                    </div>
+                </div>
+
+                <!-- Secondary Culinary Category Right -->
+                <div class="col-lg-6">
+                    <h3 class="font-serif text-chocolate border-bottom pb-2 mb-4"><i class="fa-solid fa-wine-glass text-accent me-2"></i>Pencuci Mulut & Minuman</h3>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Es Dawet Ayu Cendana</h5>
+                            <small class="text-muted font-sans">Dawet buatan tangan yang lembut disajikan dengan santan kental gurih, gula aren alami murni, dan nangka.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 35K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Ketan Durian Lumer</h5>
+                            <small class="text-muted font-sans">Ketan pulen hangat disiram saus durian premium asli bertekstur kental manis legit melimpah.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 45K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Wedang Secang Rempah Wangi</h5>
+                            <small class="text-muted font-sans">Minuman herbal berkhasiat tradisional dari kayu secang, serai, jahe bakar, dan gula batu madu.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 30K</div>
+                    </div>
+
+                    <div class="menu-item-box d-flex justify-content-between align-items-center mt-3">
+                        <div class="pe-3">
+                            <h5 class="fw-bold m-0 text-chocolate">Cendana Iced Herbal Tea</h5>
+                            <small class="text-muted font-sans">Teh hitam racikan dengan daun mint segar, perasan jeruk nipis manis, dan aroma melati yang menenangkan.</small>
+                        </div>
+                        <div class="menu-price text-nowrap">IDR 28K</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culinary highlight image row -->
+            <div class="row g-4 mt-5">
+                <div class="col-md-4 col-6">
+                    <div class="position-relative overflow-hidden rounded shadow-sm group-hover-zoom" style="height: 180px;">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" alt="Nasi Goreng Premium" class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="position-relative overflow-hidden rounded shadow-sm group-hover-zoom" style="height: 180px;">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80" alt="Sate Rempah" class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 d-md-block d-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm group-hover-zoom" style="height: 180px;">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=400&q=80" alt="Kue Tradisional Premium" class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Quote Segment with Multi-Slide Engine -->
+    <section class="quote-section py-5 text-center position-relative">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <i class="fa-solid fa-quote-left text-accent display-4 mb-3"></i>
+                    
+                    <!-- Testimonials Container -->
+                    <div class="testimonial-container position-relative overflow-hidden" style="min-height: 280px;">
+                        
+                        <!-- Testimonial 1: Wedding -->
+                        <div class="testimonial-slide active" style="transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; position: absolute; width: 100%; top: 0; left: 0; opacity: 1; transform: scale(1); pointer-events: auto;">
+                            <div class="text-accent mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="font-serif fs-3 italic text-light mb-4">"Pengalaman luar biasa saat menyelenggarakan pernikahan adik saya di Dapoer Cendana. Makanan prasmanan sangat lezat, koordinasi staf sangat profesional, dan interior ruangannya sangat mewah sehingga tidak butuh dekorasi berlebihan."</p>
+                            <div class="divider"></div>
+                            <p class="font-sans fw-bold m-0 tracking-widest text-accent fs-6">H. Rahmad Syahputra</p>
+                            <small class="text-white-50">Sohibul Hajat - Acara Pernikahan (Maret 2026)</small>
+                        </div>
+
+                        <!-- Testimonial 2: Corporate Meeting -->
+                        <div class="testimonial-slide" style="transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; position: absolute; width: 100%; top: 0; left: 0; opacity: 0; transform: scale(0.95); pointer-events: none;">
+                            <div class="text-accent mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="font-serif fs-3 italic text-light mb-4">"Kami menyewa ruang meeting selama 3 hari berturut-turut untuk rapat direksi tahunan. Koneksi internetnya sangat cepat dan stabil, fasilitas audio-visual mutakhir, dan hidangan coffee break-nya selalu hangat dan bervariasi."</p>
+                            <div class="divider"></div>
+                            <p class="font-sans fw-bold m-0 tracking-widest text-accent fs-6">Kusuma Wardhani, M.B.A.</p>
+                            <small class="text-white-50">Direktur SDM - PT Sinergi Megah (Mei 2026)</small>
+                        </div>
+
+                        <!-- Testimonial 3: Training Seminar -->
+                        <div class="testimonial-slide" style="transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; position: absolute; width: 100%; top: 0; left: 0; opacity: 0; transform: scale(0.95); pointer-events: none;">
+                            <div class="text-accent mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="font-serif fs-3 italic text-light mb-4">"Pelatihan tim penjualan kami berjalan dengan sangat sukses. Layout ruang training dapat disesuaikan dengan kebutuhan interaktif kami, pointer dan layar proyektor bekerja sangat jernih, dan pelayanannya sigap sekali membantu segala kebutuhan mendadak kami."</p>
+                            <div class="divider"></div>
+                            <p class="font-sans fw-bold m-0 tracking-widest text-accent fs-6">Budi Hartono</p>
+                            <small class="text-white-50">Operational Training Manager - Tekno Group (Januari 2026)</small>
+                        </div>
+
+                        <!-- Testimonial 4: Religious / Family Event -->
+                        <div class="testimonial-slide" style="transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; position: absolute; width: 100%; top: 0; left: 0; opacity: 0; transform: scale(0.95); pointer-events: none;">
+                            <div class="text-accent mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="font-serif fs-3 italic text-light mb-4">"Tempat terbaik untuk syukuran keluarga. Karpet lesehan yang disediakan sangat tebal, bersih, dan wangi. Sistem tata suaranya juga jernih untuk penceramah sehingga seluruh kerabat dapat mendengarkan doa bersama dengan khidmat."</p>
+                            <div class="divider"></div>
+                            <p class="font-sans fw-bold m-0 tracking-widest text-accent fs-6">Ibu Hj. Aminah Salim</p>
+                            <small class="text-white-50">Tuan Rumah - Pengajian & Aqiqah (Februari 2026)</small>
+                        </div>
+
+                    </div>
+
+                    <!-- Testimonial Navigation Dots -->
+                    <div class="testimonial-indicators d-flex justify-content-center gap-2 mt-4">
+                        <button class="active border-0 rounded-circle bg-accent" style="width: 10px; height: 10px; opacity: 1; transition: var(--transition-smooth); cursor: pointer;" aria-label="Slide Testimoni 1"></button>
+                        <button class="border-0 rounded-circle bg-secondary" style="width: 10px; height: 10px; opacity: 0.5; transition: var(--transition-smooth); cursor: pointer;" aria-label="Slide Testimoni 2"></button>
+                        <button class="border-0 rounded-circle bg-secondary" style="width: 10px; height: 10px; opacity: 0.5; transition: var(--transition-smooth); cursor: pointer;" aria-label="Slide Testimoni 3"></button>
+                        <button class="border-0 rounded-circle bg-secondary" style="width: 10px; height: 10px; opacity: 0.5; transition: var(--transition-smooth); cursor: pointer;" aria-label="Slide Testimoni 4"></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News / Promo Section with Feature Images -->
+    <section id="promo" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center max-w-lg mx-auto mb-5">
+                <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">Berita & Penawaran Spesial</p>
+                <h2 class="display-5 text-chocolate mt-1">Promo Khusus dapoercendana.id</h2>
+                <div class="divider"></div>
+                <p class="text-muted font-sans">Nantikan dan nikmati berbagai kemudahan paket spesial yang dirancang istimewa untuk kesuksesan event Anda.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Promo Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="promo-card h-100 d-flex flex-column justify-content-between">
+                        <div class="promo-img-wrapper">
+                            <span class="promo-badge">Promo Terbatas</span>
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Wedding Intimate Promo">
+                        </div>
+                        <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                            <div>
+                                <h4 class="font-serif display-8 text-light mb-3">Paket Wedding Intimate 2026</h4>
+                                <p class="small text-white-50 font-sans">Mulai dari Rp 45 Juta untuk 200 Tamu. Sudah termasuk sewa gedung eksklusif 5 jam, catering prasmanan, sound system, serta gratis menginap satu malam di hotel rekanan.</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-secondary">
+                                <a href="#kontak" class="text-accent text-decoration-none fw-bold" onclick="fillEventForm('Wedding')">Ambil Penawaran <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="promo-card h-100 d-flex flex-column justify-content-between">
+                        <div class="promo-img-wrapper">
+                            <span class="promo-badge">Corporate Offer</span>
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Corporate Meeting Promo">
+                        </div>
+                        <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                            <div>
+                                <h4 class="font-serif display-8 text-light mb-3">Meeting Setengah Hari Plus Makan Siang</h4>
+                                <p class="small text-white-50 font-sans">Hanya Rp 175.000,- per Pax (min 20 pax). Lengkap dengan ruang ber-AC dingin, proyektor nirkabel, flipchart, high speed Wi-Fi, 1x Coffee Break, dan 1x Lunch Buffet.</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-secondary">
+                                <a href="#kontak" class="text-accent text-decoration-none fw-bold" onclick="fillEventForm('Meeting')">Ambil Penawaran <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo Card 3 -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="promo-card h-100 d-flex flex-column justify-content-between">
+                        <div class="promo-img-wrapper">
+                            <span class="promo-badge">Kajian & Pengajian</span>
+                            <img src="https://images.unsplash.com/photo-1561501900-3701fa6a0f64?auto=format&fit=crop&w=600&q=80" alt="Syukuran Lesehan Promo">
+                        </div>
+                        <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                            <div>
+                                <h4 class="font-serif display-8 text-light mb-3">Syukuran Lesehan Keluarga Khidmat</h4>
+                                <p class="small text-white-50 font-sans">Nikmati kenyamanan sewa ruang berkarpet bersih untuk pengajian atau tasyakuran mulai Rp 3.5 Juta (kapasitas 50 pax), gratis teh hangat & air mineral mengalir tanpa batas.</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-secondary">
+                                <a href="#kontak" class="text-accent text-decoration-none fw-bold" onclick="fillEventForm('Pengajian')">Ambil Penawaran <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="kontak" class="py-5 bg-cream">
+        <div class="container py-4">
+            <div class="text-center max-w-lg mx-auto mb-5">
+                <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">Reservasi & Konsultasi</p>
+                <h2 class="display-5 text-chocolate mt-1">Hubungi Dapoer Cendana</h2>
+                <div class="divider"></div>
+                <p class="text-muted font-sans">Diskusikan kebutuhan pesta pernikahan, rapat bisnis, maupun santap keluarga besar Anda bersama tim reservasi profesional kami.</p>
+            </div>
+
+            <div class="row g-5">
+                <!-- Contact Form Column -->
+                <div class="col-lg-6">
+                    <div class="bg-white p-4 p-md-5 rounded shadow-sm border border-light">
+                        <h3 class="font-serif text-chocolate mb-4"><i class="fa-solid fa-envelope-open-text text-accent me-2"></i>Kirim Permintaan Reservasi</h3>
+                        
+                        <form id="contactForm" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputName" class="form-label text-muted font-sans small fw-bold">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail" class="form-label text-muted font-sans small fw-bold">Alamat Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="nama@email.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPhone" class="form-label text-muted font-sans small fw-bold">Nomor Whatsapp</label>
+                                <input type="tel" class="form-control" id="inputPhone" placeholder="Contoh: 081234567xxx" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEvent" class="form-label text-muted font-sans small fw-bold">Jenis Kebutuhan Acara</label>
+                                <select id="inputEvent" class="form-select" required>
+                                    <option value="" disabled selected>Pilih Kategori Acara</option>
+                                    <option value="Wedding">Pernikahan (Wedding)</option>
+                                    <option value="Meeting">Rapat (Meeting)</option>
+                                    <option value="Training">Pelatihan (Training)</option>
+                                    <option value="Pengajian">Pengajian / Syukuran</option>
+                                    <option value="Resto">Reservasi Meja Restoran</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputDate" class="form-label text-muted font-sans small fw-bold">Rencana Tanggal Acara</label>
+                                <input type="date" class="form-control" id="inputDate">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputGuest" class="form-label text-muted font-sans small fw-bold">Estimasi Jumlah Tamu</label>
+                                <select id="inputGuest" class="form-select">
+                                    <option value="" disabled selected>Pilih Estimasi Tamu</option>
+                                    <option value="<50">Kurang dari 50 Tamu</option>
+                                    <option value="50-150">50 - 150 Tamu</option>
+                                    <option value="150-300">150 - 300 Tamu</option>
+                                    <option value=">300">Lebih dari 300 Tamu</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputMessage" class="form-label text-muted font-sans small fw-bold">Catatan / Detail Tambahan</label>
+                                <textarea class="form-control" id="inputMessage" rows="4" placeholder="Tuliskan spesifikasi acara atau permintaan menu khusus..." required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn-elegant w-100 py-3"><i class="fa-solid fa-paper-plane me-2"></i>Kirim Permintaan Booking</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Info Map Column -->
+                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                    <!-- Contact details card -->
+                    <div class="bg-chocolate-dark text-light p-4 rounded shadow-sm mb-4 border-start border-3 border-accent">
+                        <h4 class="font-serif text-accent mb-3">Informasi Kontak & Jam Operasional</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-12 d-flex align-items-center">
+                                <i class="fa-solid fa-location-dot text-accent fs-5 me-3"></i>
+                                <span class="font-sans text-white-50">Jl. Cendana Raya No. 45, Kebayoran Baru, Jakarta Selatan</span>
+                            </div>
+                            <div class="col-sm-12 d-flex align-items-center">
+                                <i class="fa-solid fa-phone text-accent fs-5 me-3"></i>
+                                <span class="font-sans text-white-50">+62 21-555-CENDANA / +62 812-3456-7890</span>
+                            </div>
+                            <div class="col-sm-12 d-flex align-items-center">
+                                <i class="fa-solid fa-envelope text-accent fs-5 me-3"></i>
+                                <span class="font-sans text-white-50">info@dapoercendana.id</span>
+                            </div>
+                            <div class="col-sm-12 d-flex align-items-center">
+                                <i class="fa-solid fa-clock text-accent fs-5 me-3"></i>
+                                <span class="font-sans text-white-50">Setiap Hari: 09:00 WIB - 22:00 WIB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map container -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2736239126443!2d106.8041539!3d-6.2276226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14f5263a2a9%3A0xc47ff699fb48b045!2sSCBD%20Jakarta!5e0!3m2!1sid!2sid!4v1711234567890!5m2!1sid!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-chocolate-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="font-serif text-accent mb-3">Dapoer Cendana</h3>
+                    <p class="text-white-50 font-sans small">Destinasi pilihan utama untuk perhelatan terindah, rapat profesional, kegiatan religius, dan cita rasa kuliner legendaris Indonesia.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="font-serif text-accent mb-3">Tautan Cepat</h5>
+                    <ul class="list-unstyled font-sans text-white-50 small row g-2">
+                        <li><a href="#hero" class="text-decoration-none text-white-50">Beranda</a></li>
+                        <li><a href="#tentang" class="text-decoration-none text-white-50">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="text-decoration-none text-white-50">Layanan Ruang</a></li>
+                        <li><a href="#menu" class="text-decoration-none text-white-50">Menu Spesial</a></li>
+                        <li><a href="#promo" class="text-decoration-none text-white-50">Berita & Promo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="font-serif text-accent mb-3">Layanan Kami</h5>
+                    <ul class="list-unstyled font-sans text-white-50 small row g-2">
+                        <li><a href="#layanan" class="text-decoration-none text-white-50">Paket Wedding</a></li>
+                        <li><a href="#layanan" class="text-decoration-none text-white-50">Meeting Space</a></li>
+                        <li><a href="#layanan" class="text-decoration-none text-white-50">Training Center</a></li>
+                        <li><a href="#layanan" class="text-decoration-none text-white-50">Pengajian & Aqiqah</a></li>
+                        <li><a href="#menu" class="text-decoration-none text-white-50">Catering Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="font-serif text-accent mb-3">Langganan Newsletter</h5>
+                    <p class="text-white-50 small font-sans mb-3">Dapatkan promo menarik dan diskon eksklusif langsung di kotak masuk email Anda.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email Anda..." aria-label="Email" style="background-color: rgba(255,255,255,0.1); border-color: rgba(212,175,55,0.3); color: white;">
+                        <button class="btn btn-elegant py-2 px-3" type="button"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-3 text-white-50 small font-sans">
+                <p class="mb-0">&copy; 2026 Dapoer Cendana. All Rights Reserved. Hak Cipta Dilindungi.</p>
+                <p class="mb-0">Website Resmi: <a href="https://dapoercendana.id" target="_blank" class="text-accent text-decoration-none">dapoercendana.id</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top Trigger -->
+    <a href="#hero" class="scroll-top shadow" id="scrollTopBtn">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <!-- Toast container for safe user alerts -->
+    <div class="toast-container-custom" id="toastContainer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // ==========================================
+            // 1. OFFCANVAS DRAWER (Mobile Navigation Engine)
+            // ==========================================
+            const drawerTrigger = document.getElementById('drawerTrigger');
+            const drawerClose = document.getElementById('drawerClose');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOverlay = document.getElementById('drawerOverlay');
+            const drawerLinks = document.querySelectorAll('.drawer-link:not(#drawerDropdownToggle), .drawer-sublink');
+
+            function openDrawer() {
+                if (mobileDrawer && drawerOverlay) {
+                    mobileDrawer.classList.add('show');
+                    drawerOverlay.classList.add('show');
+                    document.body.style.overflow = 'hidden'; // prevent scrolling background
+                }
+            }
+
+            function closeDrawer() {
+                if (mobileDrawer && drawerOverlay) {
+                    mobileDrawer.classList.remove('show');
+                    drawerOverlay.classList.remove('show');
+                    document.body.style.overflow = ''; // restore scrolling
+                }
+            }
+
+            if (drawerTrigger) {
+                drawerTrigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openDrawer();
+                });
+            }
+
+            if (drawerClose) {
+                drawerClose.addEventListener('click', closeDrawer);
+            }
+
+            if (drawerOverlay) {
+                drawerOverlay.addEventListener('click', closeDrawer);
+            }
+
+            // Close drawer when any standard link inside is clicked
+            drawerLinks.forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            // Handle drawer dropdown toggle (Mobile Touch Accordion)
+            const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+            const drawerSubmenu = document.getElementById('drawerSubmenu');
+            const drawerChevron = document.getElementById('drawerChevron');
+
+            if (drawerDropdownToggle && drawerSubmenu && drawerChevron) {
+                drawerDropdownToggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    drawerSubmenu.classList.toggle('show');
+                    
+                    // Rotate Chevron Icon
+                    if (drawerSubmenu.classList.contains('show')) {
+                        drawerChevron.style.transform = 'rotate(180deg)';
+                    } else {
+                        drawerChevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+            }
+
+            // ==========================================
+            // 2. BULLETPROOF CAROUSEL (Custom Vanilla Fade Engine)
+            // ==========================================
+            const slides = document.querySelectorAll('.carousel-item-custom');
+            const indicators = document.querySelectorAll('.carousel-indicators-custom button');
+            const prevBtn = document.querySelector('.carousel-control-prev-custom');
+            const nextBtn = document.querySelector('.carousel-control-next-custom');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let slideInterval;
+
+            function showSlide(index) {
+                if (slides.length === 0) return;
+                
+                // Wrap index
+                if (index >= totalSlides) index = 0;
+                if (index < 0) index = totalSlides - 1;
+
+                // Toggle Active Classes
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Toggle Indicators
+                indicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            // Start Auto-Play Timer
+            function startAutoplay() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Bind Event Listeners to Controls
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    prevSlide();
+                    startAutoplay();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    nextSlide();
+                    startAutoplay();
+                });
+            }
+
+            // Bind Event Listeners to Indicators
+            indicators.forEach((btn, i) => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showSlide(i);
+                    startAutoplay();
+                });
+            });
+
+            // Initialize Carousel Slide
+            showSlide(currentSlide);
+            startAutoplay();
+
+
+            // ==========================================
+            // 2.5. CUSTOM TESTIMONIAL SLIDER ENGINE (Multi-Slide)
+            // ==========================================
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const testimonialDots = document.querySelectorAll('.testimonial-indicators button');
+            let currentTestimonial = 0;
+            const totalTestimonials = testimonialSlides.length;
+            let testimonialInterval;
+
+            function showTestimonial(index) {
+                if (testimonialSlides.length === 0) return;
+                
+                if (index >= totalTestimonials) index = 0;
+                if (index < 0) index = totalTestimonials - 1;
+
+                testimonialSlides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.style.opacity = '1';
+                        slide.style.transform = 'scale(1)';
+                        slide.style.pointerEvents = 'auto';
+                        slide.classList.add('active');
+                    } else {
+                        slide.style.opacity = '0';
+                        slide.style.transform = 'scale(0.95)';
+                        slide.style.pointerEvents = 'none';
+                        slide.classList.remove('active');
+                    }
+                });
+
+                testimonialDots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.style.opacity = '1';
+                        dot.classList.remove('bg-secondary');
+                        dot.classList.add('bg-accent');
+                    } else {
+                        dot.style.opacity = '0.5';
+                        dot.classList.remove('bg-accent');
+                        dot.classList.add('bg-secondary');
+                    }
+                });
+
+                currentTestimonial = index;
+            }
+
+            function nextTestimonial() {
+                showTestimonial(currentTestimonial + 1);
+            }
+
+            function startTestimonialAutoplay() {
+                clearInterval(testimonialInterval);
+                testimonialInterval = setInterval(nextTestimonial, 6000); // 6 Detik per slide
+            }
+
+            testimonialDots.forEach((dot, i) => {
+                dot.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showTestimonial(i);
+                    startTestimonialAutoplay();
+                });
+            });
+
+            // Mulai inisialisasi awal
+            if(totalTestimonials > 0) {
+                showTestimonial(currentTestimonial);
+                startTestimonialAutoplay();
+            }
+
+
+            // ==========================================
+            // 3. ACTIVE NAV HIGHLIGHT ON SCROLL (ScrollSpy)
+            // ==========================================
+            const sections = document.querySelectorAll('section');
+            const menuLinks = document.querySelectorAll('.nav-link');
+            const mobileDrawerLinks = document.querySelectorAll('.drawer-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Highlight desktop links
+                menuLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (current && href && href.includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Highlight drawer links
+                mobileDrawerLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (current && href && href.includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Scroll Top Button visibility logic
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                if (scrollTopBtn) {
+                    if (window.scrollY > 400) {
+                        scrollTopBtn.classList.add('show');
+                    } else {
+                        scrollTopBtn.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // ==========================================
+        // 4. HELPER ACTIONS & SUBMISSIONS
+        // ==========================================
+        function scrollToElement(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Auto selection on form when click from service cards
+        function fillEventForm(eventName) {
+            const selectElement = document.getElementById('inputEvent');
+            if(selectElement) {
+                selectElement.value = eventName;
+                scrollToElement('kontak');
+            }
+        }
+
+        // Safe Toast Messenger Notification (Anti-alert)
+        function showNotification(title, message, isSuccess = true) {
+            const toastContainer = document.getElementById('toastContainer');
+            if(!toastContainer) return;
+            
+            const toastId = 'toast_' + Date.now();
+            const toastHtml = `
+                <div id="${toastId}" class="card border-0 shadow-lg text-light mb-3" style="background-color: #3E2723; border-left: 5px solid ${isSuccess ? '#D4AF37' : '#DC3545'} !important; width: 320px; transition: all 0.5s ease;">
+                    <div class="card-body p-3">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <h6 class="m-0 font-serif text-accent"><i class="fa-solid ${isSuccess ? 'fa-circle-check' : 'fa-circle-exclamation'} me-2"></i>${title}</h6>
+                            <button type="button" class="btn-close btn-close-white btn-sm" onclick="document.getElementById('${toastId}').remove()"></button>
+                        </div>
+                        <p class="small m-0 text-white-50 font-sans">${message}</p>
+                    </div>
+                </div>
+            `;
+            
+            toastContainer.insertAdjacentHTML('beforeend', toastHtml);
+
+            // Auto dismiss after 5 seconds
+            setTimeout(() => {
+                const element = document.getElementById(toastId);
+                if (element) {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateX(-20px)';
+                    setTimeout(() => element.remove(), 500);
+                }
+            }, 5000);
+        }
+
+        // Form Submit Handler
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('inputName').value;
+                const email = document.getElementById('inputEmail').value;
+                const phone = document.getElementById('inputPhone').value;
+                const event = document.getElementById('inputEvent').value;
+                const date = document.getElementById('inputDate').value || 'Tidak ditentukan';
+
+                if (name && email && phone && event) {
+                    showNotification(
+                        "Permintaan Terkirim!", 
+                        `Terima kasih Kak ${name}. Permintaan proposal/booking untuk event "${event}" pada tanggal ${date} telah kami terima. Tim dapoercendana.id akan segera menghubungi Anda melalui nomor Whatsapp ${phone}.`
+                    );
+                    this.reset();
+                } else {
+                    showNotification(
+                        "Validasi Gagal", 
+                        "Mohon lengkapi seluruh formulir sebelum mengirim.",
+                        false
+                    );
+                }
+            });
+        }
+    </script>
+</body>
+</html>
