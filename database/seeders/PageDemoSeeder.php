@@ -140,11 +140,12 @@ class PageDemoSeeder extends Seeder
                         'data' => [
                             'variant' => 'default',
                             'title' => 'Pilihan Ruang & Acara Sesuai Kebutuhan Anda',
+                            'subtitle' => 'Layanan Serbaguna Kami',
                             'features' => [
-                                ['title' => 'Wedding Hall', 'description' => 'Rayakan perhelatan janji suci romantis Anda dalam suasana megah yang intim dan artistik bersama keluarga besar.'],
-                                ['title' => 'Meeting Space', 'description' => 'Tingkatkan performa bisnis Anda melalui ruang pertemuan representatif dengan kelengkapan mutakhir.'],
-                                ['title' => 'Training Center', 'description' => 'Konfigurasi ruangan fleksibel yang ramah untuk edukasi, seminar interaktif, dan sertifikasi tim.'],
-                                ['title' => 'Pengajian & Aqiqah', 'description' => 'Selenggarakan doa bersama, tasyakuran aqiqah, dan arisan keluarga dalam nuansa bersih nan menenangkan.']
+                                ['title' => 'Wedding Hall', 'description' => 'Rayakan perhelatan janji suci romantis Anda dalam suasana megah yang intim dan artistik bersama keluarga besar.', 'icon' => 'champagne-glasses', 'url' => '#kontak'],
+                                ['title' => 'Meeting Space', 'description' => 'Tingkatkan performa bisnis Anda melalui ruang pertemuan representatif dengan kelengkapan mutakhir.', 'icon' => 'briefcase', 'url' => '#kontak'],
+                                ['title' => 'Training Center', 'description' => 'Konfigurasi ruangan fleksibel yang ramah untuk edukasi, seminar interaktif, dan sertifikasi tim.', 'icon' => 'graduation-cap', 'url' => '#kontak'],
+                                ['title' => 'Pengajian & Aqiqah', 'description' => 'Selenggarakan doa bersama, tasyakuran aqiqah, dan arisan keluarga dalam nuansa bersih nan menenangkan.', 'icon' => 'mosque', 'url' => '#kontak']
                             ]
                         ]
                     ],
