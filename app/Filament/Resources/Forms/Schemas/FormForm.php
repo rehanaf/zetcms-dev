@@ -8,6 +8,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
@@ -27,8 +28,11 @@ class FormForm
                 TextInput::make('slug')
                     ->required()
                     ->unique('forms', 'slug', ignoreRecord: true),
-                Textarea::make('success_message')
+                RichEditor::make('success_message')
                     ->placeholder('Pesan yang ditampilkan setelah formulir dikirim')
+                    ->toolbarButtons([
+                        'blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo',
+                    ])
                     ->columnSpanFull(),
                 TextInput::make('notification_email')
                     ->email()
@@ -48,10 +52,12 @@ class FormForm
                                 'PUT' => 'PUT',
                             ])
                             ->default('POST'),
-                        Textarea::make('settings.webhook_text_template')
+                        RichEditor::make('settings.webhook_text_template')
                             ->label('Text Template')
-                            ->helperText('Gunakan {{nama_field}} untuk memasukkan data form. Hasilnya akan dikirim sebagai field "text" dan "content".')
-                            ->rows(3),
+                            ->helperText('Gunakan {{nama_field}} untuk memasukkan data form. Hasilnya akan dikirim sebagai field "text" dan "content" (format HTML).')
+                            ->toolbarButtons([
+                                'blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo',
+                            ]),
                         KeyValue::make('settings.webhook_headers')
                             ->label('Custom Headers')
                             ->keyLabel('Header Name')

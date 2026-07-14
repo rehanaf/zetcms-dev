@@ -229,7 +229,7 @@
                     if (response.ok && result.success) {
                         Swal.fire({
                             title: 'Berhasil!',
-                            text: result.message || 'Pesan Anda berhasil dikirim.',
+                            html: result.message || 'Pesan Anda berhasil dikirim.',
                             icon: 'success',
                             confirmButtonColor: '#D4AF37',
                             confirmButtonText: 'Tutup'
