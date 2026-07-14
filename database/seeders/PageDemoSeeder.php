@@ -29,7 +29,14 @@ class PageDemoSeeder extends Seeder
 
         $user = User::first();
         if (!$user) {
-            $user = User::factory()->create(['name' => 'Admin', 'email' => 'admin@example.com']);
+            $user = User::updateOrCreate(
+                ['email' => 'admin@example.com'],
+                [
+                    'name' => 'Admin',
+                    'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                    'email_verified_at' => now(),
+                ]
+            );
         }
 
         // Create Components for different block types
