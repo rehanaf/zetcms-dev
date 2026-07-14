@@ -109,7 +109,17 @@
                     link.classList.add('active');
                 }
             });
-        }); // <-- This closes the window.addEventListener('scroll', () => { ... })
+
+            // Scroll Top Button visibility logic
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (scrollTopBtn) {
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            }
+        });
 
         // ==========================================
         // 3. OFFCANVAS DRAWER (Mobile Navigation Engine)

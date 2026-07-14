@@ -18,3 +18,8 @@
         </div>
     </div>
 </footer>
+
+<!-- Scroll Top Trigger -->
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top shadow" id="scrollTopBtn">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
