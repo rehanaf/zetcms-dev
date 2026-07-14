@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Cache;
 
 class Theme extends Model
 {
@@ -32,24 +31,12 @@ class Theme extends Model
     }
 
     /**
-     * Ambil theme yang sedang aktif (di-cache karena dipanggil di hampir setiap request).
+     * Ambil theme yang sedang aktif.
      */
     public static function active(): self
     {
-        $activeThemeId = Cache::rememberForever('active_theme_id', function () {
-            $theme = static::where('is_active', true)->first()
-                ?? static::where('slug', 'default')->first();
-            return $theme?->id;
-        });
-
-        if ($activeThemeId) {
-            $theme = static::find($activeThemeId);
-            if ($theme) {
-                return $theme;
-            }
-        }
-
-        return static::where('slug', 'default')->firstOrFail();
+        return static::where('is_active', true)->first() 
+            ?? static::where('slug', 'default')->firstOrFail();
     }
 
     /**
@@ -59,8 +46,6 @@ class Theme extends Model
     {
         static::query()->update(['is_active' => false]);
         $this->update(['is_active' => true]);
-        Cache::forget('active_theme');
-        Cache::forget('active_theme_id');
     }
 
     // Path folder view theme ini, mis. "themes.default"
