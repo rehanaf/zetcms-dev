@@ -18,8 +18,8 @@ class PageDemoSeeder extends Seeder
     {
         // Ensure Theme and Layout exist
         $theme = Theme::firstOrCreate(
-            ['slug' => 'default'],
-            ['name' => 'Default Theme', 'version' => '1.0.0', 'is_active' => true]
+            ['slug' => 'elegant'],
+            ['name' => 'Elegant Theme', 'version' => '1.0.0', 'is_active' => true]
         );
 
         $layout = Layout::firstOrCreate(
