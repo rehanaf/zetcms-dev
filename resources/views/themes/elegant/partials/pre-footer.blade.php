@@ -29,20 +29,14 @@
 
 <section id="kontak" class="py-5 bg-cream">
     <div class="container py-4">
-        @if($title)
-            <div class="text-center max-w-lg mx-auto mb-5">
-                <p class="text-accent fw-bold m-0" style="letter-spacing: 2px;">Reservasi & Konsultasi</p>
-                <h2 class="display-5 text-chocolate mt-1">{{ $title }}</h2>
-                <div class="divider"></div>
-            </div>
-        @endif
+
 
         <div class="row g-5">
             {{-- Form Column --}}
             @if($hasForm)
                 <div class="col-lg-6">
                     <div class="bg-white p-4 p-md-5 rounded shadow-sm border border-light position-relative">
-                        <h3 class="font-serif text-chocolate mb-4"><i class="fa-solid fa-envelope-open-text text-accent me-2"></i>Kirim Permintaan Reservasi</h3>
+                        <h3 class="font-serif text-chocolate mb-4"><i class="fa-solid fa-envelope-open-text text-accent me-2"></i>{{ $contactForm->name ?? 'Form' }}</h3>
                         
                         @if(session('form_success') || $errors->any())
                             <div class="alert alert-{{ session('form_success') ? 'success' : 'danger' }} alert-dismissible fade show" role="alert">
@@ -89,7 +83,7 @@
             @if($hasInfo)
                 <div class="col-lg-{{ $hasForm ? '6' : '12' }} d-flex flex-column justify-content-between">
                     <div class="bg-chocolate-dark text-light p-4 rounded shadow-sm mb-4 border-start border-3 border-accent">
-                        <h4 class="font-serif text-accent mb-3">Informasi Kontak & Jam Operasional</h4>
+                        <h4 class="font-serif text-accent mb-3">{{ $title ?? 'Informasi Kontak' }}</h4>
                         <div class="row g-3">
                             @if($location)
                                 <div class="col-sm-12 d-flex align-items-center">
