@@ -32,7 +32,7 @@
     </main>
 
     @include("themes.{$themeSlug}.partials.pre-footer")
-    @include("themes.{$themeSlug}.partials.footer")
+    @include("themes.{$themeSlug}.partials.footer", ['footerMenu' => $footerMenu ?? null])
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @include("themes.{$themeSlug}.components.scripts")

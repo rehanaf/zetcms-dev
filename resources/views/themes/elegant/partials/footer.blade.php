@@ -16,8 +16,14 @@
             <div class="col-lg-6 col-md-6 text-md-end">
                 <h5 class="font-serif text-light mb-3">Tautan Cepat</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white-50 text-decoration-none">Beranda</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Tentang Kami</a></li>
+                    @if(isset($footerMenu) && $footerMenu->items->isNotEmpty())
+                        @foreach($footerMenu->items as $item)
+                            <li><a href="{{ url($item->url) }}" class="text-white-50 text-decoration-none" {{ $item->target === '_blank' ? 'target="_blank"' : '' }}>{{ $item->title }}</a></li>
+                        @endforeach
+                    @else
+                        <li><a href="#" class="text-white-50 text-decoration-none">Beranda</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Tentang Kami</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
