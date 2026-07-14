@@ -35,6 +35,7 @@ class PageDemoSeeder extends Seeder
                     'name' => 'Admin',
                     'password' => \Illuminate\Support\Facades\Hash::make('password'),
                     'email_verified_at' => now(),
+                    'role_id' => 1,
                 ]
             );
         }
