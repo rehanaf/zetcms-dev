@@ -113,32 +113,45 @@ class PageDemoSeeder extends Seeder
             [
                 'user_id' => $user->id,
                 'layout_id' => $layout->id,
-                'title' => 'All Components Demo',
+                'title' => 'Home Elegant',
                 'content' => [
-                    ['type' => 'hero', 'data' => ['variant' => 'default', 'title' => 'Hero Block', 'subtitle' => 'This is the hero subtitle', 'content' => '<p>Welcome to the all-components page.</p>']],
-                    ['type' => 'feature', 'data' => ['variant' => 'default', 'title' => 'Features', 'features' => [['title' => 'Fast Performance', 'description' => 'Blazing fast'], ['title' => 'Secure', 'description' => 'Top notch security']]]],
-                    ['type' => 'about', 'data' => ['variant' => 'default', 'title' => 'About Us', 'content' => '<p>We are a leading tech company.</p>']],
-                    ['type' => 'testimonial', 'data' => ['variant' => 'default', 'title' => 'Testimonials', 'source' => 'manual', 'manual_testimonials' => [['name' => 'John Doe', 'content' => 'Amazing product!']]]],
-                    ['type' => 'cta', 'data' => ['variant' => 'default', 'title' => 'Ready to get started?', 'description' => 'Join thousands of users today.']],
-                    ['type' => 'pricing', 'data' => ['variant' => 'default', 'title' => 'Our Plans', 'pricing_ids' => [1, 2, 3]]],
-                    ['type' => 'faq', 'data' => ['variant' => 'default', 'title' => 'Frequently Asked Questions', 'faqs' => [['question' => 'How does it work?', 'answer' => 'It works perfectly.']]]],
-                    ['type' => 'teamMember', 'data' => ['variant' => 'default', 'title' => 'Meet the Team', 'members' => [['name' => 'Alice', 'role' => 'CEO'], ['name' => 'Bob', 'role' => 'CTO']]]],
-                    ['type' => 'gallery', 'data' => ['variant' => 'default', 'title' => 'Our Gallery', 'images' => [['caption' => 'Office'], ['caption' => 'Event']]]],
-                    ['type' => 'stats', 'data' => ['variant' => 'default', 'title' => 'Our Impact', 'stats' => [['number' => '1M+', 'label' => 'Active Users'], ['number' => '99%', 'label' => 'Satisfaction']]]],
-                    ['type' => 'logoCloud', 'data' => ['variant' => 'default', 'title' => 'Trusted By', 'logos' => [['name' => 'Company A'], ['name' => 'Company B']]]],
-                    ['type' => 'video', 'data' => ['variant' => 'default', 'title' => 'Watch our Demo', 'video_url' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ']],
-                    ['type' => 'newsletter', 'data' => ['variant' => 'default', 'title' => 'Subscribe to our Newsletter']],
-                    ['type' => 'form', 'data' => ['variant' => 'default', 'title' => 'Contact Us', 'form_id' => 1]],
-                    ['type' => 'menu', 'data' => ['variant' => 'default', 'title' => 'Useful Links', 'menu_id' => 1]],
-                    ['type' => 'texteditor', 'data' => ['variant' => 'default', 'content' => '<p>This is a standard text editor block.</p>']],
-                    ['type' => 'post', 'data' => ['variant' => 'default', 'title' => 'Latest Articles', 'limit' => 3]],
-                    ['type' => 'table', 'data' => ['variant' => 'default', 'title' => 'Data Overview', 'rows' => [ ['cells' => [['value' => 'Row 1, Cell 1'], ['value' => 'Row 1, Cell 2']]] ]]],
-                    ['type' => 'carousel', 'data' => ['variant' => 'default', 'title' => 'Featured Items', 'items' => [['title' => 'Item 1', 'description' => 'Desc 1']]]],
-                    ['type' => 'price_table', 'data' => ['variant' => 'default', 'title' => 'Custom Pricing', 'categories' => [['title' => 'Services', 'items' => [['name' => 'Consulting', 'price' => '$100/hr']]]]]],
+                    [
+                        'type' => 'carousel',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Hero Slider',
+                            'items' => [
+                                ['title' => 'Rayakan momen terindah hidup Anda', 'description' => 'Dapoer Cendana menghadirkan kemewahan ruang, suasana elegan, dan layanan premium untuk hari pernikahan impian Anda.'],
+                                ['title' => 'Ruang pertemuan representatif & modern', 'description' => 'Tingkatkan produktivitas bisnis Anda dengan ruang rapat premium yang didukung fasilitas audio-visual mutakhir dan hidangan kelas dunia.'],
+                                ['title' => 'Perpaduan cita rasa autentik & elegansi', 'description' => 'Manjakan selera Anda dengan sajian kuliner bercita rasa istimewa racikan Chef profesional kami di suasana restoran yang hangat.']
+                            ]
+                        ]
+                    ],
+                    [
+                        'type' => 'about',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Sinergi antara Kuliner Berkelas dan Ruang Acara Eksklusif',
+                            'content' => '<p>Berlokasi strategis, <strong>Dapoer Cendana</strong> merupakan destinasi prima yang memadukan keindahan restoran bernuansa estetika kolonial-modern dengan fungsionalitas ruang serbaguna tingkat tinggi.</p><p>Kami menyediakan area elegan untuk berbagai perhelatan istimewa Anda, mulai dari pernikahan megah, rapat bisnis korporat yang kondusif, pelatihan profesional, hingga pengajian keluarga besar yang khidmat. Kami hadir untuk memastikan setiap momen berharga Anda di dapoercendana.id berjalan dengan sempurna.</p>'
+                        ]
+                    ],
+                    [
+                        'type' => 'feature',
+                        'data' => [
+                            'variant' => 'default',
+                            'title' => 'Pilihan Ruang & Acara Sesuai Kebutuhan Anda',
+                            'features' => [
+                                ['title' => 'Wedding Hall', 'description' => 'Rayakan perhelatan janji suci romantis Anda dalam suasana megah yang intim dan artistik bersama keluarga besar.'],
+                                ['title' => 'Meeting Space', 'description' => 'Tingkatkan performa bisnis Anda melalui ruang pertemuan representatif dengan kelengkapan mutakhir.'],
+                                ['title' => 'Training Center', 'description' => 'Konfigurasi ruangan fleksibel yang ramah untuk edukasi, seminar interaktif, dan sertifikasi tim.'],
+                                ['title' => 'Pengajian & Aqiqah', 'description' => 'Selenggarakan doa bersama, tasyakuran aqiqah, dan arisan keluarga dalam nuansa bersih nan menenangkan.']
+                            ]
+                        ]
+                    ],
                 ],
                 'status' => 'published',
                 'published_at' => now(),
-                'is_homepage' => false,
+                'is_homepage' => true,
             ]
         );
 
