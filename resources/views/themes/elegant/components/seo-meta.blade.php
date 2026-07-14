@@ -8,6 +8,12 @@
 @endphp
 
 <title>{{ $model->meta_title ?? $siteName }} - {{ $siteName }}</title>
+@php
+    $siteFavicon = \App\Models\Setting::get('site_favicon');
+@endphp
+@if($siteFavicon)
+    <link rel="icon" href="{{ \Illuminate\Support\Facades\Storage::url($siteFavicon) }}">
+@endif
 <meta name="description" content="{{ $model->meta_description ?? '' }}">
 @if($seo?->meta_keywords)
     <meta name="keywords" content="{{ $seo->meta_keywords }}">

@@ -1,7 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="/">
-            <span class="text-accent fw-bold m-0 pe-2">{{ config('app.name', 'Dapoer Cendana') }}</span>
+            @php
+                $siteLogo = \App\Models\Setting::get('site_logo');
+                $siteName = \App\Models\Setting::get('site_name', config('app.name', 'Dapoer Cendana'));
+            @endphp
+            @if($siteLogo)
+                <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" height="40" class="me-2">
+            @else
+                <span class="text-accent fw-bold m-0 pe-2">{{ $siteName }}</span>
+            @endif
         </a>
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation" id="drawerTrigger">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +48,11 @@
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <div class="offcanvas-drawer" id="mobileDrawer">
     <div class="drawer-header">
-        <span class="text-accent fw-bold font-serif fs-4 m-0">{{ config('app.name', 'Dapoer Cendana') }}</span>
+        @if($siteLogo)
+            <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" height="40" class="m-0">
+        @else
+            <span class="text-accent fw-bold font-serif fs-4 m-0">{{ $siteName }}</span>
+        @endif
         <button class="drawer-close" id="drawerClose" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
