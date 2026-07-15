@@ -33,7 +33,7 @@ class ThemeForm
                 Toggle::make('is_active')
                     ->required()
                     ->default(false),
-                \Filament\Forms\Components\Section::make('Theme Settings')
+                \Filament\Schemas\Components\Section::make('Theme Settings')
                     ->schema(function (?\App\Models\Theme $record) {
                         if (!$record) return [];
                         
