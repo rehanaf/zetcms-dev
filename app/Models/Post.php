@@ -22,14 +22,14 @@ class Post extends Model
         'featured_image_id', 'status', 'published_at', 'expired_at', 'is_featured', 'views',
     ];
 
-    public function featuredImage(): BelongsTo
+    public function media(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'featured_image_id');
     }
 
     public function getFeaturedImageAttribute()
     {
-        return $this->featuredImage ? 'storage/' . $this->featuredImage->file_path : null;
+        return $this->media ? 'storage/' . $this->media->file_path : null;
     }
 
     protected $casts = [
