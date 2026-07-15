@@ -1,0 +1,31 @@
+{
+  "name": "Tech Theme",
+  "version": "1.0.0",
+  "author": "Rey",
+  "description": "Tech startup theme with gradient colors and dark mode support",
+  "settings_schema": [
+    {
+      "name": "color_gradient",
+      "label": "Warna Gradasi Tema",
+      "type": "select",
+      "default": "cyber-blue",
+      "options": {
+        "cyber-blue": "Cyber Blue (Blue to Purple)",
+        "neon-green": "Neon Green (Green to Emerald)",
+        "sunset-orange": "Sunset Orange (Orange to Pink)"
+      }
+    },
+    {
+      "name": "font_family",
+      "label": "Font Family Utama",
+      "type": "select",
+      "default": "Inter",
+      "options": {
+        "Inter": "Inter",
+        "Onest": "Onest",
+        "Geist": "Geist",
+        "Outfit": "Outfit"
+      }
+    }
+  ]
+}
