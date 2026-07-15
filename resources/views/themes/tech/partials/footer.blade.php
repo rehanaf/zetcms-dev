@@ -9,12 +9,12 @@
                 @if($siteLogo)
                     <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" style="height: 40px; width: auto;" class="mb-3">
                 @else
-                    <h3 class="font-serif text-primary text-gradient mb-3">{{ $siteName }}</h3>
+                    <h3 class="fw-bolder tracking-tight text-primary text-gradient mb-3">{{ $siteName }}</h3>
                 @endif
-                <p class="text-white-50 font-sans small">Destinasi pilihan utama untuk perhelatan terindah, rapat profesional, kegiatan religius, dan cita rasa kuliner legendaris Indonesia.</p>
+                <p class="text-white-50  small">Destinasi pilihan utama untuk perhelatan terindah, rapat profesional, kegiatan religius, dan cita rasa kuliner legendaris Indonesia.</p>
             </div>
             <div class="col-lg-6 col-md-6 text-md-end">
-                <h5 class="font-serif text-light mb-3">{{ isset($footerMenu) && $footerMenu ? $footerMenu->name : 'Tautan Cepat' }}</h5>
+                <h5 class="fw-bolder tracking-tight text-light mb-3">{{ isset($footerMenu) && $footerMenu ? $footerMenu->name : 'Tautan Cepat' }}</h5>
                 <ul class="list-unstyled">
                     @if(isset($footerMenu) && $footerMenu->items->isNotEmpty())
                         @foreach($footerMenu->items as $item)

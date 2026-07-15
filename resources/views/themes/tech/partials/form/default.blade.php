@@ -9,11 +9,11 @@
         @if(!empty($data['title']) || !empty($data['description']))
             <div class="text-center max-w-lg mx-auto mb-5" data-aos="fade-up">
                 @if(!empty($data['title']))
-                    <h2 class="display-5 text-primary mt-1 font-serif">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 text-primary mt-1 fw-bolder tracking-tight">{{ $data['title'] }}</h2>
                 @endif
                 <div class="divider"></div>
                 @if(!empty($data['description']))
-                    <p class="text-muted mt-3 font-sans">{{ $data['description'] }}</p>
+                    <p class="text-muted mt-3 ">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -31,7 +31,7 @@
                                 <div class="row g-4">
                                     @foreach($form->fields as $field)
                                         <div class="{{ $field->type === 'textarea' ? 'col-12' : 'col-md-6' }}">
-                                            <label class="form-label font-sans text-primary fw-semibold">
+                                            <label class="form-label  text-primary fw-semibold">
                                                 {{ $field->label }}
                                                 @if($field->is_required ?? false)
                                                     <span class="text-danger">*</span>
@@ -52,7 +52,7 @@
                                             @endif
 
                                             @error($field->name)
-                                                <div class="text-danger small mt-1 font-sans">{{ $message }}</div>
+                                                <div class="text-danger small mt-1 ">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     @endforeach
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             @else
-                <p class="text-white-50 text-center font-sans">Form tidak ditemukan.</p>
+                <p class="text-white-50 text-center ">Form tidak ditemukan.</p>
             @endif
         @endif
     </div>

@@ -36,7 +36,7 @@
                             <div class="pe-3">
                                 <h5 class="fw-bold m-0 text-primary">{{ $plan->name }}</h5>
                                 @if($plan->description ?? false)
-                                    <small class="text-muted font-sans">{{ $plan->description }}</small>
+                                    <small class="text-muted ">{{ $plan->description }}</small>
                                 @endif
                             </div>
                             <div class="menu-price text-nowrap">{{ $plan->price }}</div>

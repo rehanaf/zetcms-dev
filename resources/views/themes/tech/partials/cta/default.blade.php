@@ -3,7 +3,7 @@
     Fields: title, description, subtitle,
             button_text, button_url, bg_image_id
 --}}
-<section class="py-5 position-relative overflow-hidden bg-surface-elevated" style="border-top: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent);">
+<section class="py-5 position-relative overflow-hidden bg-surface-elevated" style="border-top: 2px solid var(--color-primary); border-bottom: 2px solid var(--color-primary);">
     {{-- Background image overlay --}}
     @if(!empty($data['bg_image_id']))
         @php $bg = \App\Models\Media::find($data['bg_image_id']); @endphp
@@ -23,13 +23,13 @@
                 @endif
 
                 @if(!empty($data['title']))
-                    <h2 class="display-4 font-serif text-white mb-4">
+                    <h2 class="display-4 fw-bolder tracking-tight text-white mb-4">
                         {{ $data['title'] }}
                     </h2>
                 @endif
 
                 @if(!empty($data['description']))
-                    <p class="text-white-50 font-sans lead mb-5 px-md-4">
+                    <p class="text-white-50  lead mb-5 px-md-4">
                         {{ $data['description'] }}
                     </p>
                 @endif

@@ -7,11 +7,11 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 @if(!empty($data['title']))
-                    <h2 class="display-6 font-serif text-primary text-gradient mb-3">{{ $data['title'] }}</h2>
+                    <h2 class="display-6 fw-bolder tracking-tight text-primary text-gradient mb-3">{{ $data['title'] }}</h2>
                 @endif
                 
                 @if(!empty($data['description']))
-                    <p class="text-white-50 font-sans mb-4">{{ $data['description'] }}</p>
+                    <p class="text-white-50  mb-4">{{ $data['description'] }}</p>
                 @endif
 
                 <form action="{{ route('newsletter.subscribe') }}" method="POST">
@@ -25,7 +25,7 @@
                         </button>
                     </div>
                 </form>
-                <small class="text-white-50 font-sans mt-3 d-block">* Kami menghargai privasi Anda dan tidak akan mengirimkan spam.</small>
+                <small class="text-white-50  mt-3 d-block">* Kami menghargai privasi Anda dan tidak akan mengirimkan spam.</small>
             </div>
         </div>
     </div>

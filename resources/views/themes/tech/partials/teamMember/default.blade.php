@@ -13,11 +13,11 @@
                     <p class="text-primary text-gradient fw-bold m-0" style="letter-spacing: 2px;">{{ $data['subtitle'] }}</p>
                 @endif
                 @if(!empty($data['title']))
-                    <h2 class="display-5 text-primary mt-1 font-serif">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 text-primary mt-1 fw-bolder tracking-tight">{{ $data['title'] }}</h2>
                 @endif
                 <div class="divider"></div>
                 @if(!empty($data['description']))
-                    <p class="text-muted mt-3 font-sans">{{ $data['description'] }}</p>
+                    <p class="text-muted mt-3 ">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -34,23 +34,23 @@
                             {{-- Avatar --}}
                             @if($media)
                                 <img src="{{ $media->url }}" alt="{{ $member['name'] ?? '' }}"
-                                     class="rounded-circle object-fit-cover mx-auto mb-4 border border-2 border-accent" style="width: 120px; height: 120px;">
+                                     class="rounded-circle object-fit-cover mx-auto mb-4 border border-2 border-primary" style="width: 120px; height: 120px;">
                             @else
-                                <div class="rounded-circle bg-surface-elevated d-flex align-items-center justify-content-center mx-auto mb-4 border border-2 border-accent" style="width: 120px; height: 120px;">
-                                    <span class="text-primary text-gradient font-serif fs-1">
+                                <div class="rounded-circle bg-surface-elevated d-flex align-items-center justify-content-center mx-auto mb-4 border border-2 border-primary" style="width: 120px; height: 120px;">
+                                    <span class="text-primary text-gradient fw-bolder tracking-tight fs-1">
                                         {{ strtoupper(substr($member['name'] ?? 'A', 0, 1)) }}
                                     </span>
                                 </div>
                             @endif
 
                             @if(!empty($member['name']))
-                                <h4 class="font-serif text-primary fw-bold m-0">{{ $member['name'] }}</h4>
+                                <h4 class="fw-bolder tracking-tight text-primary fw-bold m-0">{{ $member['name'] }}</h4>
                             @endif
                             @if(!empty($member['role']))
-                                <p class="text-primary text-gradient font-sans small fw-semibold mb-3">{{ $member['role'] }}</p>
+                                <p class="text-primary text-gradient  small fw-semibold mb-3">{{ $member['role'] }}</p>
                             @endif
                             @if(!empty($member['bio']))
-                                <p class="text-muted small font-sans mb-4">{{ $member['bio'] }}</p>
+                                <p class="text-muted small  mb-4">{{ $member['bio'] }}</p>
                             @endif
 
                             {{-- Sosial media --}}
@@ -82,7 +82,7 @@
             </div>
             
             <style>
-                .hover-text-primary text-gradient:hover { color: var(--color-accent) !important; }
+                .hover-text-primary text-gradient:hover { color: var(--color-primary) !important; }
             </style>
         @endif
     </div>

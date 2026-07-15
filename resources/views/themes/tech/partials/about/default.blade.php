@@ -18,7 +18,7 @@
                 <div class="divider-left"></div>
                 
                 @if(!empty($data['content']))
-                    <div class="text-muted font-sans fs-6 mb-4">
+                    <div class="text-muted  fs-6 mb-4">
                         {!! $data['content'] !!}
                     </div>
                 @endif
@@ -34,7 +34,7 @@
                     @php $media = \App\Models\Media::find($data['image_id']); @endphp
                     @if($media)
                         <div class="position-relative p-4">
-                            <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 border-accent rounded-3" style="transform: translate(-15px, -15px); z-index: 1;"></div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 border-primary rounded-3" style="transform: translate(-15px, -15px); z-index: 1;"></div>
                             <img src="{{ $media->url }}" alt="{{ $data['title'] ?? 'About' }}" class="img-fluid rounded-3 position-relative shadow-lg" style="z-index: 2; object-fit: cover; height: 450px; width: 100%;">
                         </div>
                     @endif

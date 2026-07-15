@@ -55,7 +55,7 @@
         @if($siteLogo)
             <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" style="height: 40px; width: auto;" class="m-0">
         @else
-            <span class="text-primary text-gradient fw-bold font-serif fs-4 m-0">{{ $siteName }}</span>
+            <span class="text-primary text-gradient fw-bold fw-bolder tracking-tight fs-4 m-0">{{ $siteName }}</span>
         @endif
         <button class="drawer-close" id="drawerClose" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>

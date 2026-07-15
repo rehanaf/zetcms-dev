@@ -12,11 +12,11 @@
                     <p class="text-primary text-gradient fw-bold m-0" style="letter-spacing: 2px;">{{ $data['subtitle'] }}</p>
                 @endif
                 @if(!empty($data['title']))
-                    <h2 class="display-5 text-primary mt-1 font-serif">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 text-primary mt-1 fw-bolder tracking-tight">{{ $data['title'] }}</h2>
                 @endif
                 <div class="divider"></div>
                 @if(!empty($data['description']))
-                    <p class="text-muted mt-3 font-sans">{{ $data['description'] }}</p>
+                    <p class="text-muted mt-3 ">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -34,9 +34,9 @@
                                     <img src="{{ $media->url }}" alt="{{ $item['caption'] ?? '' }}"
                                          class="w-100 object-fit-cover" style="height: 300px; transition: transform 0.5s ease;">
                                     
-                                    <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4" style="background: linear-gradient(to top, rgba(30,18,15,0.9) 0%, rgba(30,18,15,0) 70%); opacity: 0; transition: opacity 0.4s ease;">
+                                    <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4" style="background: linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 70%); opacity: 0; transition: opacity 0.4s ease;">
                                         @if(!empty($item['caption']))
-                                            <p class="text-white font-serif fs-5 m-0" style="transform: translateY(20px); transition: transform 0.4s ease;">{{ $item['caption'] }}</p>
+                                            <p class="text-white fw-bolder tracking-tight fs-5 m-0" style="transform: translateY(20px); transition: transform 0.4s ease;">{{ $item['caption'] }}</p>
                                         @endif
                                     </div>
                                 @if(!empty($item['url']))

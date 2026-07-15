@@ -36,7 +36,7 @@
             @if($hasForm)
                 <div class="col-lg-6">
                     <div class="bg-white p-4 p-md-5 rounded shadow-sm border border-light position-relative">
-                        <h3 class="font-serif text-primary mb-4"><i class="fa-solid fa-envelope-open-text text-primary text-gradient me-2"></i>{{ $contactForm->name ?? 'Form' }}</h3>
+                        <h3 class="fw-bolder tracking-tight text-primary mb-4"><i class="fa-solid fa-envelope-open-text text-primary text-gradient me-2"></i>{{ $contactForm->name ?? 'Form' }}</h3>
                         
 
 
@@ -44,7 +44,7 @@
                             @csrf
                             @foreach($contactForm->fields as $field)
                                 <div class="col-12">
-                                    <label class="form-label text-muted font-sans small fw-bold">
+                                    <label class="form-label text-muted  small fw-bold">
                                         {{ $field->label }} @if($field->is_required ?? false) <span class="text-primary text-gradient">*</span> @endif
                                     </label>
 
@@ -77,25 +77,25 @@
             {{-- Info & Map Column --}}
             @if($hasInfo)
                 <div class="col-lg-{{ $hasForm ? '6' : '12' }} d-flex flex-column justify-content-between">
-                    <div class="bg-surface-elevated text-light p-4 rounded shadow-sm mb-4 border-start border-3 border-accent">
-                        <h4 class="font-serif text-primary text-gradient mb-3">{{ $title ?? 'Informasi Kontak' }}</h4>
+                    <div class="bg-surface-elevated text-light p-4 rounded shadow-sm mb-4 border-start border-3 border-primary">
+                        <h4 class="fw-bolder tracking-tight text-primary text-gradient mb-3">{{ $title ?? 'Informasi Kontak' }}</h4>
                         <div class="row g-3">
                             @if($location)
                                 <div class="col-sm-12 d-flex align-items-center">
                                     <i class="fa-solid fa-location-dot text-primary text-gradient fs-5 me-3"></i>
-                                    <span class="font-sans text-white-50">{{ $location }}</span>
+                                    <span class=" text-white-50">{{ $location }}</span>
                                 </div>
                             @endif
                             @if($phone)
                                 <div class="col-sm-12 d-flex align-items-center">
                                     <i class="fa-solid fa-phone text-primary text-gradient fs-5 me-3"></i>
-                                    <span class="font-sans text-white-50">{{ $phone }}</span>
+                                    <span class=" text-white-50">{{ $phone }}</span>
                                 </div>
                             @endif
                             @if($email)
                                 <div class="col-sm-12 d-flex align-items-center">
                                     <i class="fa-solid fa-envelope text-primary text-gradient fs-5 me-3"></i>
-                                    <span class="font-sans text-white-50">{{ $email }}</span>
+                                    <span class=" text-white-50">{{ $email }}</span>
                                 </div>
                             @endif
                         </div>

@@ -14,7 +14,7 @@
                     <p class="text-primary text-gradient fw-bold m-0" style="letter-spacing: 2px;">{{ $data['description'] }}</p>
                 @endif
                 @if(!empty($data['title']))
-                    <h2 class="display-5 text-primary mt-1 font-serif">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 text-primary mt-1 fw-bolder tracking-tight">{{ $data['title'] }}</h2>
                 @endif
                 <div class="divider"></div>
             </div>
@@ -29,13 +29,13 @@
                             @if(!empty($category['image_id']))
                                 @php $catImg = \App\Models\Media::find($category['image_id']); @endphp
                                 @if($catImg)
-                                    <img src="{{ $catImg->url }}" alt="{{ $category['title'] ?? '' }}" class="rounded-circle me-3 border border-2 border-accent" style="width: 45px; height: 45px; object-fit: cover;">
+                                    <img src="{{ $catImg->url }}" alt="{{ $category['title'] ?? '' }}" class="rounded-circle me-3 border border-2 border-primary" style="width: 45px; height: 45px; object-fit: cover;">
                                 @endif
                             @elseif(!empty($category['icon']))
                                 <div class="text-primary text-gradient fs-3 me-3"><i class="{{ $category['icon'] }}"></i></div>
                             @endif
                             
-                            <h3 class="font-serif text-primary m-0">{{ $category['title'] ?? '' }}</h3>
+                            <h3 class="fw-bolder tracking-tight text-primary m-0">{{ $category['title'] ?? '' }}</h3>
                         </div>
 
                         {{-- Category Items --}}
@@ -46,7 +46,7 @@
                                         <div class="pe-3">
                                             <h5 class="fw-bold m-0 text-primary">{{ $item['name'] ?? '' }}</h5>
                                             @if(!empty($item['description']))
-                                                <small class="text-muted font-sans">{{ $item['description'] }}</small>
+                                                <small class="text-muted ">{{ $item['description'] }}</small>
                                             @endif
                                         </div>
                                         <div class="menu-price text-nowrap">{{ $item['price'] ?? '' }}</div>

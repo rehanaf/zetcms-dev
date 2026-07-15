@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-8">
                 @if(!empty($data['content']))
-                    <div class="font-sans content-formatted">
+                    <div class=" content-formatted">
                         {!! $data['content'] !!}
                     </div>
                 @endif

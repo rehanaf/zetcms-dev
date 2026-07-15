@@ -12,16 +12,16 @@
         }
     }
 @endphp
-<section class="py-5 bg-surface position-relative" style="background-image: linear-gradient(rgba(30,18,15,0.85), rgba(30,18,15,0.85)), url('{{ $bgUrl }}'); background-size: cover; background-position: center; background-attachment: fixed; border-top: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent);">
+<section class="py-5 bg-surface position-relative" style="background-image: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('{{ $bgUrl }}'); background-size: cover; background-position: center; background-attachment: fixed; border-top: 2px solid var(--color-primary); border-bottom: 2px solid var(--color-primary);">
     <div class="container py-5 text-center text-light position-relative" style="z-index: 2;">
         {{-- Header --}}
         @if(!empty($data['title']) || !empty($data['description']))
             <div class="mb-5">
                 @if(!empty($data['title']))
-                    <h2 class="display-5 font-serif text-primary text-gradient mb-3">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 fw-bolder tracking-tight text-primary text-gradient mb-3">{{ $data['title'] }}</h2>
                 @endif
                 @if(!empty($data['description']))
-                    <p class="text-white-50 font-sans max-w-lg mx-auto">{{ $data['description'] }}</p>
+                    <p class="text-white-50  max-w-lg mx-auto">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -36,8 +36,8 @@
                                     <i class="{{ $stat['icon'] }}"></i>
                                 </div>
                             @endif
-                            <h3 class="display-4 font-serif text-white fw-bold mb-1">{{ $stat['number'] ?? '0' }}</h3>
-                            <p class="text-primary text-gradient font-sans small text-uppercase tracking-widest m-0" style="letter-spacing: 2px;">{{ $stat['label'] ?? '' }}</p>
+                            <h3 class="display-4 fw-bolder tracking-tight text-white fw-bold mb-1">{{ $stat['number'] ?? '0' }}</h3>
+                            <p class="text-primary text-gradient  small text-uppercase tracking-widest m-0" style="letter-spacing: 2px;">{{ $stat['label'] ?? '' }}</p>
                         </div>
                     </div>
                 @endforeach

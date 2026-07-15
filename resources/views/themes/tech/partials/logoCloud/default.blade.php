@@ -8,10 +8,10 @@
         @if(!empty($data['title']) || !empty($data['description']))
             <div class="text-center mb-5">
                 @if(!empty($data['title']))
-                    <h4 class="font-serif text-primary mb-2">{{ $data['title'] }}</h4>
+                    <h4 class="fw-bolder tracking-tight text-primary mb-2">{{ $data['title'] }}</h4>
                 @endif
                 @if(!empty($data['description']))
-                    <p class="text-muted font-sans small m-0">{{ $data['description'] }}</p>
+                    <p class="text-muted  small m-0">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -31,7 +31,7 @@
                             @endif
                         </div>
                     @elseif(!empty($logo['name']))
-                        <span class="font-sans fw-bold text-muted fs-5 opacity-50">{{ $logo['name'] }}</span>
+                        <span class=" fw-bold text-muted fs-5 opacity-50">{{ $logo['name'] }}</span>
                     @endif
                 @endforeach
             </div>

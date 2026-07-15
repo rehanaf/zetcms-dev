@@ -14,7 +14,7 @@
         }
     }
 @endphp
-<section class="quote-section py-5 text-center position-relative" style="{{ $testiBgUrl ? "background-image: linear-gradient(rgba(30,18,15,0.9), rgba(30,18,15,0.9)), url('{$testiBgUrl}'); background-size: cover; background-position: center; background-attachment: fixed;" : "" }}">
+<section class="quote-section py-5 text-center position-relative" style="{{ $testiBgUrl ? "background-image: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)), url('{$testiBgUrl}'); background-size: cover; background-position: center; background-attachment: fixed;" : "" }}">
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-9" data-aos="zoom-in">
@@ -56,9 +56,9 @@
                                             <i class="fa-solid fa-star {{ $i > $rating ? 'text-secondary' : '' }}"></i>
                                         @endfor
                                     </div>
-                                    <p class="font-serif fs-3 italic text-light mb-4">"{{ $text }}"</p>
+                                    <p class="fw-bolder tracking-tight fs-3 italic text-light mb-4">"{{ $text }}"</p>
                                     <div class="divider"></div>
-                                    <p class="font-sans fw-bold m-0 tracking-widest text-primary text-gradient fs-6">{{ $name }}</p>
+                                    <p class=" fw-bold m-0 tracking-widest text-primary text-gradient fs-6">{{ $name }}</p>
                                     <small class="text-white-50">{{ implode(' - ', array_filter([$role, $company])) }}</small>
                                 </div>
                             @endforeach

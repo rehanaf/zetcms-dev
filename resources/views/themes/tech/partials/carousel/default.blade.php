@@ -25,7 +25,7 @@
                         @endif
                         
                         @if(!empty($item['description']))
-                            <div class="lead text-white-50 max-w-2xl mx-auto mb-4 font-sans fs-5">
+                            <div class="lead text-white-50 max-w-2xl mx-auto mb-4  fs-5">
                                 {{ $item['description'] }}
                             </div>
                         @endif

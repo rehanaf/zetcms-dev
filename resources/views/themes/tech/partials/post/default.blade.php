@@ -16,7 +16,7 @@
                 @endif
                 <div class="divider"></div>
                 @if(!empty($data['description']))
-                    <p class="text-muted font-sans">{{ $data['description'] }}</p>
+                    <p class="text-muted ">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -64,9 +64,9 @@
                             </div>
                             <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                                 <div>
-                                    <h4 class="font-serif display-8 text-light mb-3">{{ $post->title }}</h4>
+                                    <h4 class="fw-bolder tracking-tight display-8 text-light mb-3">{{ $post->title }}</h4>
                                     @if($post->excerpt ?? false)
-                                        <p class="small text-white-50 font-sans">{{ $post->excerpt }}</p>
+                                        <p class="small text-white-50 ">{{ $post->excerpt }}</p>
                                     @endif
                                 </div>
                                 <div class="mt-4 pt-3 border-top border-secondary">

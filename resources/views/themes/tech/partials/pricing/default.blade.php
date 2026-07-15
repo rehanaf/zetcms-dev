@@ -35,14 +35,14 @@
                         <div class="card h-100 border-0 rounded-4 {{ $plan->is_featured ? 'shadow-lg bg-surface-elevated text-light' : 'shadow-sm bg-main' }}" style="transition: transform 0.3s ease; {{ $plan->is_featured ? 'transform: scale(1.05); z-index: 2;' : '' }}">
                             <div class="card-body p-5 d-flex flex-column position-relative">
                                 
-                                <h4 class="font-serif text-center {{ $plan->is_featured ? 'text-primary text-gradient mt-3' : 'text-primary' }} mb-2">{{ $plan->name }}</h4>
+                                <h4 class="fw-bolder tracking-tight text-center {{ $plan->is_featured ? 'text-primary text-gradient mt-3' : 'text-primary' }} mb-2">{{ $plan->name }}</h4>
                                 
                                 @if($plan->description)
                                     <p class="text-center {{ $plan->is_featured ? 'text-white-50' : 'text-muted' }} small mb-4">{{ $plan->description }}</p>
                                 @endif
                                 
                                 <div class="text-center mb-4">
-                                    <span class="display-6 fw-bold font-sans {{ $plan->is_featured ? 'text-white' : 'text-dark' }}">{{ $plan->price }}</span>
+                                    <span class="display-6 fw-bold  {{ $plan->is_featured ? 'text-white' : 'text-dark' }}">{{ $plan->price }}</span>
                                     @if($plan->period)
                                         <span class="{{ $plan->is_featured ? 'text-white-50' : 'text-muted' }}">/ {{ $plan->period }}</span>
                                     @endif
@@ -65,7 +65,7 @@
                                                 {{ $plan->button_text }}
                                             </a>
                                         @else
-                                            <a href="{{ $plan->button_url ?? '#' }}" class="btn btn-outline-dark w-100 text-center d-block py-2 fw-semibold font-sans" style="border-radius: 4px;">
+                                            <a href="{{ $plan->button_url ?? '#' }}" class="btn btn-outline-dark w-100 text-center d-block py-2 fw-semibold " style="border-radius: 4px;">
                                                 {{ $plan->button_text }}
                                             </a>
                                         @endif

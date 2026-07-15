@@ -8,11 +8,11 @@
         @if(!empty($data['title']) || !empty($data['description']))
             <div class="text-center max-w-lg mx-auto mb-5">
                 @if(!empty($data['title']))
-                    <h2 class="display-5 text-primary mt-1 font-serif">{{ $data['title'] }}</h2>
+                    <h2 class="display-5 text-primary mt-1 fw-bolder tracking-tight">{{ $data['title'] }}</h2>
                 @endif
                 <div class="divider"></div>
                 @if(!empty($data['description']))
-                    <p class="text-muted mt-3 font-sans">{{ $data['description'] }}</p>
+                    <p class="text-muted mt-3 ">{{ $data['description'] }}</p>
                 @endif
             </div>
         @endif
@@ -45,10 +45,10 @@
                 <div class="col-lg-10">
                     <div class="position-relative p-3">
                         {{-- Bingkai Dekoratif --}}
-                        <div class="position-absolute top-0 end-0 w-100 h-100 border border-3 border-accent rounded-4" style="transform: translate(-10px, -10px); z-index: 1;"></div>
-                        <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 border-accent rounded-4" style="transform: translate(10px, 10px); z-index: 1;"></div>
+                        <div class="position-absolute top-0 end-0 w-100 h-100 border border-3 border-primary rounded-4" style="transform: translate(-10px, -10px); z-index: 1;"></div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 border-primary rounded-4" style="transform: translate(10px, 10px); z-index: 1;"></div>
                         
-                        <div class="position-relative rounded-4 overflow-hidden shadow-lg" style="padding-top: 56.25%; z-index: 2; background-color: var(--color-dark);">
+                        <div class="position-relative rounded-4 overflow-hidden shadow-lg" style="padding-top: 56.25%; z-index: 2; background-color: var(--bg-main);">
                             @if($isEmbed)
                                 <iframe src="{{ $embedUrl }}"
                                         class="position-absolute top-0 start-0 w-100 h-100"
