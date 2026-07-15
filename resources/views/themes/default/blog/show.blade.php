@@ -68,7 +68,7 @@
                         @endif
                         <div>
                             <h4 class="font-bold text-slate-900 line-clamp-1 hover:text-amber-500 transition-colors">
-                                <a href="{{ route('blog.show', $related->slug) }}">{{ $related->title }}</a>
+                                <a href="{{ route('page.show', $related->slug) }}">{{ $related->title }}</a>
                             </h4>
                             <p class="text-xs text-slate-500 mt-1">{{ $related->published_at ? $related->published_at->format('d M Y') : $related->created_at->format('d M Y') }}</p>
                         </div>

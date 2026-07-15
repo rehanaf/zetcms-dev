@@ -20,5 +20,4 @@ Route::post('/{slug}/comment', [FrontendController::class, 'storeComment'])
     ->name('blog.comment');
 
 // Wildcard route for pages and posts
-Route::get('/{slug}', [FrontendController::class, 'slugShow'])->name('blog.show');
 Route::get('/{slug}', [FrontendController::class, 'slugShow'])->name('page.show');

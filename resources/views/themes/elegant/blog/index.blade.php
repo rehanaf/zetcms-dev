@@ -45,7 +45,7 @@
                                 <article class="card h-100 border-0 rounded-0 bg-transparent">
                                     <div class="position-relative overflow-hidden shadow-sm mb-3">
                                         @if($post->featured_image)
-                                            <a href="{{ route('blog.show', $post->slug) }}" class="d-block">
+                                            <a href="{{ route('page.show', $post->slug) }}" class="d-block">
                                                 <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}" class="w-100 object-fit-cover hover-scale" style="height: 220px; transition: transform 0.5s ease;">
                                             </a>
                                         @else
@@ -71,7 +71,7 @@
                                         </div>
                                         
                                         <h3 class="font-serif fs-4 mb-2 line-clamp-2">
-                                            <a href="{{ route('blog.show', $post->slug) }}" class="text-chocolate text-decoration-none hover-text-accent transition">{{ $post->title }}</a>
+                                            <a href="{{ route('page.show', $post->slug) }}" class="text-chocolate text-decoration-none hover-text-accent transition">{{ $post->title }}</a>
                                         </h3>
                                         
                                         <p class="text-secondary font-sans small mb-3 line-clamp-3">
@@ -86,7 +86,7 @@
                                                 </div>
                                                 <span class="font-sans small fw-semibold text-chocolate">{{ $post->user->name ?? 'Administrator' }}</span>
                                             </div>
-                                            <a href="{{ route('blog.show', $post->slug) }}" class="text-accent text-decoration-none small fw-bold font-sans text-uppercase tracking-widest">
+                                            <a href="{{ route('page.show', $post->slug) }}" class="text-accent text-decoration-none small fw-bold font-sans text-uppercase tracking-widest">
                                                 Baca
                                             </a>
                                         </div>

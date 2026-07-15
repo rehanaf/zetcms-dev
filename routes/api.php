@@ -20,5 +20,4 @@ Route::post('/newsletter/subscribe', [HeadlessFrontendController::class, 'subscr
 Route::post('/{slug}/comment', [HeadlessFrontendController::class, 'storeComment'])->middleware('throttle:5,1')->name('api.blog.comment');
 
 // Wildcard route for pages and posts
-Route::get('/{slug}', [HeadlessFrontendController::class, 'slugShow'])->name('api.blog.show');
 Route::get('/{slug}', [HeadlessFrontendController::class, 'slugShow'])->name('api.page.show');

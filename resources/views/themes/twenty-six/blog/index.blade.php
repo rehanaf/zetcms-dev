@@ -79,7 +79,7 @@
                                     <span>{{ $post->views }} Views</span>
                                 </div>
                                 <h2 class="text-xl font-bold text-slate-900 mb-2 line-clamp-2 hover:text-amber-500 transition-colors">
-                                    <a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a>
+                                    <a href="{{ route('page.show', $post->slug) }}">{{ $post->title }}</a>
                                 </h2>
                                 <p class="text-sm text-slate-600 line-clamp-3 mb-4">
                                     {{ $post->excerpt ?: strip_tags(Str::limit($post->content, 120)) }}
@@ -94,7 +94,7 @@
                                 </div>
                                 <span class="text-xs font-semibold text-slate-700">{{ $post->user->name ?? 'Administrator' }}</span>
                             </div>
-                            <a href="{{ route('blog.show', $post->slug) }}" class="text-xs font-bold text-amber-600 hover:text-amber-700 inline-flex items-center gap-1">
+                            <a href="{{ route('page.show', $post->slug) }}" class="text-xs font-bold text-amber-600 hover:text-amber-700 inline-flex items-center gap-1">
                                 Baca Selengkapnya 
                                 <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

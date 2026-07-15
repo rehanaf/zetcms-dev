@@ -69,7 +69,7 @@
                                         @endif
                                         <div>
                                             <h5 class="font-serif fs-6 mb-1 line-clamp-2">
-                                                <a href="{{ route('blog.show', $related->slug) }}" class="text-chocolate text-decoration-none hover-text-accent transition">{{ $related->title }}</a>
+                                                <a href="{{ route('page.show', $related->slug) }}" class="text-chocolate text-decoration-none hover-text-accent transition">{{ $related->title }}</a>
                                             </h5>
                                             <span class="text-muted small font-sans"><i class="fa-regular fa-clock me-1"></i> {{ $related->published_at ? $related->published_at->format('d M Y') : $related->created_at->format('d M Y') }}</span>
                                         </div>
