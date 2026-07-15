@@ -138,20 +138,24 @@ class FrontendController extends Controller
         }
 
         // Filter Kategori
+        $currentCategory = null;
         if ($request->has('category')) {
             $categorySlug = $request->input('category');
             $category = Category::where('slug', $categorySlug)->first();
             if ($category) {
+                $currentCategory = $category;
                 $query->where('category_id', $category->id);
                 $posts = $query->paginate(10);
             }
         }
 
         // Filter Tag
+        $currentTag = null;
         if ($request->has('tag')) {
             $tagSlug = $request->input('tag');
             $tag = Tag::where('slug', $tagSlug)->first();
             if ($tag) {
+                $currentTag = $tag;
                 $query->whereHas('tags', function($q) use ($tag) {
                     $q->where('tags.id', $tag->id);
                 });
@@ -166,18 +170,42 @@ class FrontendController extends Controller
         // Selesaikan view path dengan theme aktif
         $themeSlug = ThemeService::active()->slug;
         $viewPath = "themes.{$themeSlug}.blog.index";
+        
+        $metaTitle = 'Blog - ' . \App\Models\Setting::get('site_name', config('app.name'));
+        $metaDescription = 'Daftar artikel dan berita terbaru kami.';
+        
+        if ($currentCategory) {
+            $metaTitle = 'Kategori: ' . $currentCategory->name . ' - ' . \App\Models\Setting::get('site_name', config('app.name'));
+            $metaDescription = $currentCategory->description ?? $metaDescription;
+        } elseif ($currentTag) {
+            $metaTitle = 'Tag: ' . $currentTag->name . ' - ' . \App\Models\Setting::get('site_name', config('app.name'));
+        }
 
         return view($viewPath, array_merge([
             'posts' => $posts,
             'categories' => $categories,
             'tags' => $tags,
+            'currentCategory' => $currentCategory,
+            'currentTag' => $currentTag,
             // dummy model for title
             'model' => (object) [
-                'meta_title' => 'Blog - ' . \App\Models\Setting::get('site_name', config('app.name')),
-                'meta_description' => 'Daftar artikel dan berita terbaru kami.',
+                'meta_title' => $metaTitle,
+                'meta_description' => $metaDescription,
                 'og_image' => null,
             ],
         ], $menus));
+    }
+
+    public function categoryShow($slug, Request $request)
+    {
+        $request->merge(['category' => $slug]);
+        return $this->blogIndex($request);
+    }
+
+    public function tagShow($slug, Request $request)
+    {
+        $request->merge(['tag' => $slug]);
+        return $this->blogIndex($request);
     }
 
 

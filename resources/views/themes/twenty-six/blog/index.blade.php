@@ -66,7 +66,7 @@
                                 @endif
                                 
                                 @if($post->category)
-                                    <a href="{{ route('blog.index', ['category' => $post->category->slug]) }}" class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
+                                    <a href="{{ route('category.show', $post->category->slug) }}" class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
                                         {{ $post->category->name }}
                                     </a>
                                 @endif
@@ -125,7 +125,7 @@
             <ul class="space-y-2">
                 @foreach($categories as $category)
                     <li>
-                        <a href="{{ route('blog.index', ['category' => $category->slug]) }}" class="flex items-center justify-between text-sm text-slate-600 hover:text-amber-500 py-1 font-medium {{ request('category') === $category->slug ? 'text-amber-500 font-bold' : '' }}">
+                        <a href="{{ route('category.show', $category->slug) }}" class="flex items-center justify-between text-sm text-slate-600 hover:text-amber-500 py-1 font-medium {{ request('category') === $category->slug ? 'text-amber-500 font-bold' : '' }}">
                             <span>{{ $category->name }}</span>
                         </a>
                     </li>
@@ -143,7 +143,7 @@
             </h3>
             <div class="flex flex-wrap gap-2">
                 @foreach($tags as $tag)
-                    <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}" class="px-3 py-1 rounded-lg text-xs font-semibold border border-slate-100 hover:border-amber-500 hover:text-amber-600 transition-colors {{ request('tag') === $tag->slug ? 'bg-amber-500 text-white border-amber-500' : 'bg-slate-50 text-slate-600' }}">
+                    <a href="{{ route('tag.show', $tag->slug) }}" class="px-3 py-1 rounded-lg text-xs font-semibold border border-slate-100 hover:border-amber-500 hover:text-amber-600 transition-colors {{ request('tag') === $tag->slug ? 'bg-amber-500 text-white border-amber-500' : 'bg-slate-50 text-slate-600' }}">
                         #{{ $tag->name }}
                     </a>
                 @endforeach

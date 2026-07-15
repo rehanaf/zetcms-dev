@@ -12,7 +12,7 @@
     $siteFavicon = \App\Models\Setting::get('site_favicon');
 @endphp
 @if($siteFavicon)
-    <link rel="icon" href="{{ \Illuminate\Support\Facades\Storage::url($siteFavicon) }}">
+    <link rel="icon" href="{{ asset('storage/' . $siteFavicon) }}">
 @endif
 <meta name="description" content="{{ $model->meta_description ?? '' }}">
 @if($seo?->meta_keywords)

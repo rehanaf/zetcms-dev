@@ -58,7 +58,7 @@
                                         
                                         @if($post->category)
                                             <div class="position-absolute top-0 start-0 m-3">
-                                                <a href="{{ route('blog.index', ['category' => $post->category->slug]) }}" class="badge bg-accent text-dark rounded-pill py-1 px-3 shadow-sm text-decoration-none">
+                                                <a href="{{ route('category.show', $post->category->slug) }}" class="badge bg-accent text-dark rounded-pill py-1 px-3 shadow-sm text-decoration-none">
                                                     {{ $post->category->name }}
                                                 </a>
                                             </div>
@@ -116,7 +116,7 @@
                             <ul class="list-unstyled mb-0 font-sans">
                                 @foreach($categories as $category)
                                     <li class="mb-2">
-                                        <a href="{{ route('blog.index', ['category' => $category->slug]) }}" class="d-flex justify-content-between align-items-center text-decoration-none py-1 {{ request('category') === $category->slug ? 'text-accent fw-bold' : 'text-secondary hover-text-accent' }}">
+                                        <a href="{{ route('category.show', $category->slug) }}" class="d-flex justify-content-between align-items-center text-decoration-none py-1 {{ request('category') === $category->slug ? 'text-accent fw-bold' : 'text-secondary hover-text-accent' }}">
                                             <span>{{ $category->name }}</span>
                                         </a>
                                     </li>
@@ -131,7 +131,7 @@
                             <h4 class="font-serif text-chocolate fs-5 mb-4 border-bottom border-accent border-opacity-25 pb-2">Topik Terkait</h4>
                             <div class="d-flex flex-wrap gap-2 font-sans">
                                 @foreach($tags as $tag)
-                                    <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}" class="badge rounded-pill fw-normal px-3 py-2 text-decoration-none border transition {{ request('tag') === $tag->slug ? 'bg-accent text-dark border-accent' : 'bg-transparent text-secondary border-secondary hover-bg-accent hover-text-dark hover-border-accent' }}">
+                                    <a href="{{ route('tag.show', $tag->slug) }}" class="badge rounded-pill fw-normal px-3 py-2 text-decoration-none border transition {{ request('tag') === $tag->slug ? 'bg-accent text-dark border-accent' : 'bg-transparent text-secondary border-secondary hover-bg-accent hover-text-dark hover-border-accent' }}">
                                         #{{ $tag->name }}
                                     </a>
                                 @endforeach

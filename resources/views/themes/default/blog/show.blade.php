@@ -6,7 +6,7 @@
     <!-- Post Header -->
     <div class="space-y-4">
         @if($post->category)
-            <a href="{{ route('blog.index', ['category' => $post->category->slug]) }}" class="inline-flex bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+            <a href="{{ route('category.show', $post->category->slug) }}" class="inline-flex bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                 {{ $post->category->name }}
             </a>
         @endif
@@ -45,7 +45,7 @@
     @if($post->tags->isNotEmpty())
         <div class="flex flex-wrap gap-2 pt-6 border-t border-slate-100">
             @foreach($post->tags as $tag)
-                <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}" class="bg-slate-100 hover:bg-amber-100 hover:text-amber-700 px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 transition-colors">
+                <a href="{{ route('tag.show', $tag->slug) }}" class="bg-slate-100 hover:bg-amber-100 hover:text-amber-700 px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 transition-colors">
                     #{{ $tag->name }}
                 </a>
             @endforeach

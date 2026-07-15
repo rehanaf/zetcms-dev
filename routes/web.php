@@ -43,4 +43,6 @@ Route::get('/theme-assets/{theme}/{path}', function ($theme, $path) {
 })->where('path', '.*')->name('theme.asset');
 
 // Wildcard route for pages and posts
+Route::get('/category/{slug}', [FrontendController::class, 'categoryShow'])->name('category.show');
+Route::get('/tag/{slug}', [FrontendController::class, 'tagShow'])->name('tag.show');
 Route::get('/{slug}', [FrontendController::class, 'slugShow'])->name('page.show');

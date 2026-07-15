@@ -10,7 +10,7 @@
                 {{-- Header Artikel --}}
                 <div class="text-center mb-5">
                     @if($post->category)
-                        <a href="{{ route('blog.index', ['category' => $post->category->slug]) }}" class="badge bg-transparent border border-accent text-accent rounded-pill py-2 px-4 mb-4 text-decoration-none text-uppercase tracking-widest font-sans shadow-sm">
+                        <a href="{{ route('category.show', $post->category->slug) }}" class="badge bg-transparent border border-accent text-accent rounded-pill py-2 px-4 mb-4 text-decoration-none text-uppercase tracking-widest font-sans shadow-sm">
                             {{ $post->category->name }}
                         </a>
                     @endif
@@ -47,7 +47,7 @@
                 @if($post->tags->isNotEmpty())
                     <div class="mt-5 pt-4 border-top border-accent border-opacity-25 d-flex flex-wrap gap-2">
                         @foreach($post->tags as $tag)
-                            <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}" class="badge bg-white text-muted border border-secondary rounded-pill px-3 py-2 text-decoration-none hover-bg-accent hover-text-dark hover-border-accent transition font-sans fw-normal">
+                            <a href="{{ route('tag.show', $tag->slug) }}" class="badge bg-white text-muted border border-secondary rounded-pill px-3 py-2 text-decoration-none hover-bg-accent hover-text-dark hover-border-accent transition font-sans fw-normal">
                                 #{{ $tag->name }}
                             </a>
                         @endforeach
