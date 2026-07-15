@@ -40,7 +40,7 @@
                 @endif
                 @if($headerBtnText)
                 <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                    <a class="btn-elegant py-2 px-4" href="{{ $headerBtnUrl }}"><i class="fa-solid fa-calendar-check me-2"></i>{{ $headerBtnText }}</a>
+                    <a class="btn-elegant py-2 px-4" href="{{ $headerBtnUrl }}">{{ $headerBtnText }}</a>
                 </li>
                 @endif
             </ul>
@@ -83,7 +83,7 @@
         
         @if($headerBtnText)
         <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
-            <a class="btn-elegant py-3 px-4 w-100 text-center d-block" href="{{ $headerBtnUrl }}"><i class="fa-solid fa-calendar-check me-2"></i>{{ $headerBtnText }}</a>
+            <a class="btn-elegant py-3 px-4 w-100 text-center d-block" href="{{ $headerBtnUrl }}">{{ $headerBtnText }}</a>
         </div>
         @endif
     </div>
