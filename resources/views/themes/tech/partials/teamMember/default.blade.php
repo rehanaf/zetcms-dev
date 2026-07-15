@@ -1,5 +1,5 @@
 {{--
-    Team Member — Elegant Variant
+    Team Member — Tech Variant
     Fields: title, description, subtitle,
             members[]: name, role, image_id, bio,
                        facebook_url, twitter_url, linkedin_url, instagram_url

@@ -1,5 +1,5 @@
 {{--
-    Price Table (Manual) — Elegant Variant (Default)
+    Price Table (Manual) — Tech Variant (Default)
     Fields: title, description,
             categories[]:
                 title, icon, image_id

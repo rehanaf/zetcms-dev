@@ -1,5 +1,5 @@
 {{--
-    Newsletter — Elegant Variant
+    Newsletter — Tech Variant
     Fields: title, description, button_text, placeholder
 --}}
 <section class="py-5 bg-primary text-white">

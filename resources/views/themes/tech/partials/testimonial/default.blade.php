@@ -1,5 +1,5 @@
 {{--
-    Testimonial — Elegant Variant
+    Testimonial — Tech Variant
     Fields: title, description, subtitle,
             source: 'dynamic' | 'manual'
             -- dynamic: testimonial_ids[], limit
@@ -39,7 +39,7 @@
                 @endphp
 
                 @if($testimonials->isNotEmpty())
-                    <div id="elegantCarouselTestimonial" class="carousel slide mt-4" data-bs-ride="carousel">
+                    <div id="techCarouselTestimonial" class="carousel slide mt-4" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($testimonials as $index => $item)
                                 @php
@@ -66,7 +66,7 @@
                         
                         <div class="testimonial-indicators d-flex justify-content-center gap-2 mt-4">
                             @foreach($testimonials as $index => $item)
-                                <button type="button" data-bs-target="#elegantCarouselTestimonial" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active border-0 rounded-circle bg-accent' : 'border-0 rounded-circle bg-secondary' }}" style="width: 10px; height: 10px; cursor: pointer;"></button>
+                                <button type="button" data-bs-target="#techCarouselTestimonial" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active border-0 rounded-circle bg-accent' : 'border-0 rounded-circle bg-secondary' }}" style="width: 10px; height: 10px; cursor: pointer;"></button>
                             @endforeach
                         </div>
                     </div>

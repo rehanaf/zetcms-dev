@@ -1,5 +1,5 @@
 {{--
-    Feature — Elegant Variant
+    Feature — Tech Variant
     Fields: title, subtitle,
             features[]: title, description, icon, image_id, url
 --}}

@@ -1,5 +1,5 @@
 {{--
-    Video — Elegant Variant
+    Video — Tech Variant
     Fields: title, description, video_url, placeholder_image_id
 --}}
 <section class="py-5 bg-main">

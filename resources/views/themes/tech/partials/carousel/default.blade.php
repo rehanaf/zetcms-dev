@@ -1,5 +1,5 @@
 {{--
-    Carousel — Elegant Variant
+    Carousel — Tech Variant
     Fields: title, description,
             items[]: image_id, title, subtitle, description, button_text, button_url
 --}}

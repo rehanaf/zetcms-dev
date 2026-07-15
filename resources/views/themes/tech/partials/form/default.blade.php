@@ -1,5 +1,5 @@
 {{--
-    Form — Elegant Variant
+    Form — Tech Variant
     Fields: title, description, form_id
     Relasi ke Model: \App\Models\Form
 --}}

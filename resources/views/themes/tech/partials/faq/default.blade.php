@@ -1,5 +1,5 @@
 {{--
-    FAQ — Elegant Variant
+    FAQ — Tech Variant
     Fields: title, description, subtitle,
             faqs[]: question, answer
 --}}

@@ -1,5 +1,5 @@
 {{--
-    Pricing (Table) — Elegant Variant (Default)
+    Pricing (Table) — Tech Variant (Default)
     Fields: title, description, pricing_ids[]
     Relasi ke Model: \App\Models\Pricing
 --}}

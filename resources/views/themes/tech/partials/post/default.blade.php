@@ -1,5 +1,5 @@
 {{--
-    Post (Promo/Berita) — Elegant Variant
+    Post (Promo/Berita) — Tech Variant
     Fields: title, description, subtitle,
             category_id, tag_id, search, post_ids[], limit
 --}}

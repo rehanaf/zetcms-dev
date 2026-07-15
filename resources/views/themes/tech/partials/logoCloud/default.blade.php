@@ -1,5 +1,5 @@
 {{--
-    Logo Cloud — Elegant Variant
+    Logo Cloud — Tech Variant
     Fields: title, description,
             logos[]: image_id, name, url
 --}}

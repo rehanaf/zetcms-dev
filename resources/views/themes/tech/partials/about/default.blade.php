@@ -1,5 +1,5 @@
 {{--
-    About — Elegant Variant
+    About — Tech Variant
     Fields: title, subtitle, content (rich), image_id,
             button_text, button_url
 --}}

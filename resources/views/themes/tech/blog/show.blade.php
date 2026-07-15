@@ -1,4 +1,4 @@
-@extends('themes.elegant.layouts.app')
+@extends('themes.tech.layouts.app')
 
 @section('content')
 <section class="py-5 bg-main">

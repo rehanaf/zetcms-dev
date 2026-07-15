@@ -1,5 +1,5 @@
 {{--
-    Stats — Elegant Variant
+    Stats — Tech Variant
     Fields: title, description,
             stats[]: number, label, icon
 --}}

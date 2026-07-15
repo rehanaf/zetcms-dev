@@ -1,5 +1,5 @@
 {{--
-    CTA — Elegant Variant
+    CTA — Tech Variant
     Fields: title, description, subtitle,
             button_text, button_url, bg_image_id
 --}}

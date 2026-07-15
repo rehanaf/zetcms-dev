@@ -1,5 +1,5 @@
 {{--
-    Hero — Elegant Variant
+    Hero — Tech Variant
     Fields: title, subtitle, content (rich), image_id,
             primary_btn_text, primary_btn_url,
             secondary_btn_text, secondary_btn_url

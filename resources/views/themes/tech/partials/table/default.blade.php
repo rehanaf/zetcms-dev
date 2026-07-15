@@ -1,5 +1,5 @@
 {{--
-    Table — Elegant Variant
+    Table — Tech Variant
     Fields: title, description,
             rows[]: cells[] (simple string array)
 --}}

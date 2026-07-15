@@ -1,5 +1,5 @@
 {{--
-    Gallery — Elegant Variant
+    Gallery — Tech Variant
     Fields: title, description, subtitle,
             images[]: image_id, caption, url
 --}}
