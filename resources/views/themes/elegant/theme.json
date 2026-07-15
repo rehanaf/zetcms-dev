@@ -1,0 +1,37 @@
+{
+  "name": "Elegant",
+  "version": "1.1.0",
+  "author": "Rey",
+  "description": "Elegant Theme for Dapoer Cendana",
+  "settings_schema": [
+    {
+      "name": "color_scheme",
+      "label": "Skema Warna Tema",
+      "type": "image_select",
+      "default": "dark-chocolate",
+      "options": [
+        {
+          "value": "dark-chocolate",
+          "label": "Dark Chocolate (Coklat Gelap)",
+          "image": "assets/preview-dark.jpg"
+        },
+        {
+          "value": "creamy-latte",
+          "label": "Creamy Latte (Terang & Lembut)",
+          "image": "assets/preview-light.jpg"
+        }
+      ]
+    },
+    {
+      "name": "font_family",
+      "label": "Font Family Utama",
+      "type": "select",
+      "default": "Inter",
+      "options": {
+        "Inter": "Inter (Modern & Clean)",
+        "Playfair Display": "Playfair (Klasik & Elegan)",
+        "Roboto": "Roboto (Standar)"
+      }
+    }
+  ]
+}

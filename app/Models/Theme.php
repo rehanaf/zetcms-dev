@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Theme extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'description', 'screenshot_id', 'version', 'author', 'is_active',
+        'name', 'slug', 'description', 'screenshot_id', 'version', 'author', 'is_active', 'settings',
     ];
 
     public function screenshotMedia(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -18,6 +18,7 @@ class Theme extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
+        'settings'  => 'array',
     ];
 
     public function layouts(): HasMany
