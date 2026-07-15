@@ -4,6 +4,8 @@
             @php
                 $siteLogo = \App\Models\Setting::get('site_logo');
                 $siteName = \App\Models\Setting::get('site_name', config('app.name', 'Dapoer Cendana'));
+                $headerBtnText = \App\Models\Setting::get('header_button_text', 'Booking');
+                $headerBtnUrl = \App\Models\Setting::get('header_button_url', '#kontak');
             @endphp
             @if($siteLogo)
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($siteLogo) }}" alt="{{ $siteName }}" style="height: 40px; width: auto;" class="me-2">
@@ -36,9 +38,11 @@
                         @endif
                     @endforeach
                 @endif
+                @if($headerBtnText)
                 <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                    <a class="btn-elegant py-2 px-4" href="#kontak"><i class="fa-solid fa-calendar-check me-2"></i>Booking</a>
+                    <a class="btn-elegant py-2 px-4" href="{{ $headerBtnUrl }}"><i class="fa-solid fa-calendar-check me-2"></i>{{ $headerBtnText }}</a>
                 </li>
+                @endif
             </ul>
         </div>
     </div>
@@ -77,8 +81,10 @@
             @endforeach
         @endif
         
+        @if($headerBtnText)
         <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
-            <a class="btn-elegant py-3 px-4 w-100 text-center d-block" href="#kontak"><i class="fa-solid fa-calendar-check me-2"></i>Booking</a>
+            <a class="btn-elegant py-3 px-4 w-100 text-center d-block" href="{{ $headerBtnUrl }}"><i class="fa-solid fa-calendar-check me-2"></i>{{ $headerBtnText }}</a>
         </div>
+        @endif
     </div>
 </div>

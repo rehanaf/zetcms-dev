@@ -115,6 +115,14 @@ class SettingsPage extends FilamentPage
                                         TextInput::make('copyright_text')
                                             ->label('Teks Copyright')
                                             ->columnSpanFull(),
+                                        TextInput::make('header_button_text')
+                                            ->label('Header Button Text')
+                                            ->placeholder('e.g. Booking')
+                                            ->helperText('Teks tombol di header'),
+                                        TextInput::make('header_button_url')
+                                            ->label('Header Button URL')
+                                            ->placeholder('e.g. #kontak or https://...')
+                                            ->helperText('URL tujuan tombol di header'),
                                     ]),
 
                                 Section::make('Logo & Favicon')
@@ -355,6 +363,7 @@ class SettingsPage extends FilamentPage
             'contact_is_active', 'contact_title', 'contact_email', 'contact_phone',
             'contact_location', 'contact_maps_embed', 'contact_form_id',
             'custom_header_scripts', 'custom_footer_scripts', 'custom_css',
+            'header_button_text', 'header_button_url',
         ];
 
         $booleanKeys = ['maintenance_mode', 'contact_is_active'];
@@ -375,6 +384,7 @@ class SettingsPage extends FilamentPage
             'contact_phone' => 'contact', 'contact_location' => 'contact',
             'contact_maps_embed' => 'contact', 'contact_form_id' => 'contact',
             'custom_header_scripts' => 'custom', 'custom_footer_scripts' => 'custom', 'custom_css' => 'custom',
+            'header_button_text' => 'general', 'header_button_url' => 'general',
         ];
 
         $state = $this->form->getState();
