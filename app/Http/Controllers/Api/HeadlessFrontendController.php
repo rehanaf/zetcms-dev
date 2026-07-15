@@ -60,50 +60,73 @@ class HeadlessFrontendController extends Controller
         ]);
     }
 
-    public function pageShow($slug)
+    public function slugShow($slug)
     {
+        // 1. Cek Page
         $page = Page::where('slug', $slug)
             ->published()
             ->first();
 
-        if (!$page) {
-            $redirect = Redirect::where('old_url', $slug)
-                ->orWhere('old_url', '/' . $slug)
-                ->where('is_active', true)
-                ->first();
-
-            if ($redirect) {
-                $redirect->increment('hits');
+        if ($page) {
+            $homepageId = \App\Models\Setting::get('homepage_page_id');
+            if ($page->is_homepage || ($homepageId && $page->id == $homepageId)) {
                 return response()->json([
                     'success' => true,
                     'redirect' => true,
-                    'url' => $redirect->new_url,
-                    'type' => $redirect->type
-                ], $redirect->type == 301 ? 301 : 302);
+                    'url' => '/',
+                    'type' => 301
+                ], 301);
             }
 
-            return response()->json(['success' => false, 'message' => 'Page not found'], 404);
+            $menus = $this->getMenus();
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'type' => 'page',
+                    'page' => $page,
+                    'menus' => $menus,
+                ]
+            ]);
         }
 
-        $homepageId = \App\Models\Setting::get('homepage_page_id');
-        if ($page->is_homepage || ($homepageId && $page->id == $homepageId)) {
+        // 2. Cek Post
+        $post = Post::with('category', 'tags', 'comments')
+            ->where('slug', $slug)
+            ->published()
+            ->first();
+            
+        if ($post) {
+            $post->increment('views');
+            PostView::record($post->id);
+
+            $menus = $this->getMenus();
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'type' => 'post',
+                    'post' => $post,
+                    'menus' => $menus,
+                ]
+            ]);
+        }
+
+        // 3. Cek Redirect
+        $redirect = Redirect::where('old_url', $slug)
+            ->orWhere('old_url', '/' . $slug)
+            ->where('is_active', true)
+            ->first();
+
+        if ($redirect) {
+            $redirect->increment('hits');
             return response()->json([
                 'success' => true,
                 'redirect' => true,
-                'url' => '/',
-                'type' => 301
-            ], 301);
+                'url' => $redirect->new_url,
+                'type' => $redirect->type
+            ], $redirect->type == 301 ? 301 : 302);
         }
 
-        $menus = $this->getMenus();
-
-        return response()->json([
-            'success' => true,
-            'data' => [
-                'page' => $page,
-                'menus' => $menus,
-            ]
-        ]);
+        return response()->json(['success' => false, 'message' => 'Not found'], 404);
     }
 
     public function blogIndex(Request $request)
@@ -167,30 +190,7 @@ class HeadlessFrontendController extends Controller
         ]);
     }
 
-    public function blogShow($slug)
-    {
-        $post = Post::with('category', 'tags', 'comments')
-            ->where('slug', $slug)
-            ->published()
-            ->first();
-            
-        if (!$post) {
-            return response()->json(['success' => false, 'message' => 'Post not found'], 404);
-        }
 
-        $post->increment('views');
-        PostView::record($post->id);
-
-        $menus = $this->getMenus();
-
-        return response()->json([
-            'success' => true,
-            'data' => [
-                'post' => $post,
-                'menus' => $menus,
-            ]
-        ]);
-    }
 
     public function storeComment(Request $request, $slug)
     {

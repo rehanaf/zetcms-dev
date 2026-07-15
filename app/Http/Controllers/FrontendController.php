@@ -55,41 +55,62 @@ class FrontendController extends Controller
         ], $menus));
     }
 
-    public function pageShow($slug)
+    public function slugShow($slug)
     {
-        // Cari halaman statis
+        // 1. Cek Halaman Statis (Page)
         $page = Page::where('slug', $slug)
             ->published()
             ->first();
 
-        if (!$page) {
-            // Cek redirect jika halaman tidak ditemukan
-            $redirect = Redirect::where('old_url', $slug)
-                ->orWhere('old_url', '/' . $slug)
-                ->where('is_active', true)
-                ->first();
-
-            if ($redirect) {
-                $redirect->increment('hits');
-                return redirect($redirect->new_url, $redirect->type);
+        if ($page) {
+            // Jika halaman ini diatur sebagai homepage, redirect ke root /
+            $homepageId = \App\Models\Setting::get('homepage_page_id');
+            if ($page->is_homepage || ($homepageId && $page->id == $homepageId)) {
+                return redirect('/', 301);
             }
 
-            abort(404);
+            $menus = $this->getMenus();
+            $layoutView = ThemeService::layoutView('layouts.app');
+
+            return view($layoutView, array_merge([
+                'page' => $page,
+                'model' => $page,
+            ], $menus));
         }
 
-        // Jika halaman ini diatur sebagai homepage, redirect ke root /
-        $homepageId = \App\Models\Setting::get('homepage_page_id');
-        if ($page->is_homepage || ($homepageId && $page->id == $homepageId)) {
-            return redirect('/', 301);
+        // 2. Cek Blog Post
+        $post = Post::with('category', 'tags', 'comments')
+            ->where('slug', $slug)
+            ->published()
+            ->first();
+
+        if ($post) {
+            // Increment Views
+            $post->increment('views');
+            PostView::record($post->id);
+
+            $menus = $this->getMenus();
+            $themeSlug = ThemeService::active()->slug;
+            $viewPath = "themes.{$themeSlug}.blog.show";
+
+            return view($viewPath, array_merge([
+                'post' => $post,
+                'model' => $post, // untuk seo-meta
+            ], $menus));
         }
 
-        $menus = $this->getMenus();
-        $layoutView = ThemeService::layoutView('layouts.app');
+        // 3. Cek redirect jika halaman tidak ditemukan
+        $redirect = Redirect::where('old_url', $slug)
+            ->orWhere('old_url', '/' . $slug)
+            ->where('is_active', true)
+            ->first();
 
-        return view($layoutView, array_merge([
-            'page' => $page,
-            'model' => $page,
-        ], $menus));
+        if ($redirect) {
+            $redirect->increment('hits');
+            return redirect($redirect->new_url, $redirect->type);
+        }
+
+        abort(404);
     }
 
     public function blogIndex(Request $request)
@@ -159,28 +180,7 @@ class FrontendController extends Controller
         ], $menus));
     }
 
-    public function blogShow($slug)
-    {
-        $post = Post::with('category', 'tags', 'comments')
-            ->where('slug', $slug)
-            ->published()
-            ->firstOrFail();
 
-        // Increment Views
-        $post->increment('views');
-        PostView::record($post->id);
-
-        $menus = $this->getMenus();
-
-        // Selesaikan view path dengan theme aktif
-        $themeSlug = ThemeService::active()->slug;
-        $viewPath = "themes.{$themeSlug}.blog.show";
-
-        return view($viewPath, array_merge([
-            'post' => $post,
-            'model' => $post, // untuk seo-meta
-        ], $menus));
-    }
 
     public function storeComment(Request $request, $slug)
     {
