@@ -57,6 +57,10 @@
         color: var(--color-accent);
     }
 
+    .text-chocolate {
+        color: var(--color-primary) !important;
+    }
+
     .bg-chocolate-dark {
         background-color: var(--color-dark);
     }
@@ -784,7 +788,7 @@
     }
     /* Custom Content Formatting */
     .content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4 {
-        color: var(--color-chocolate);
+        color: var(--color-primary);
         font-family: var(--font-serif);
         margin-top: 1.5rem;
         margin-bottom: 1rem;

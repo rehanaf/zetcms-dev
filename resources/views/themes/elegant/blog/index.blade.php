@@ -49,9 +49,11 @@
                                                 <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}" class="w-100 object-fit-cover hover-scale" style="height: 220px; transition: transform 0.5s ease;">
                                             </a>
                                         @else
-                                            <div class="w-100 bg-chocolate-dark d-flex align-items-center justify-content-center" style="height: 220px;">
-                                                <span class="font-serif text-accent fs-4 opacity-50">Gambar Tidak Tersedia</span>
-                                            </div>
+                                            <a href="{{ route('page.show', $post->slug) }}" class="d-block text-decoration-none">
+                                                <div class="w-100 bg-cream d-flex align-items-center justify-content-center text-center p-4 border border-accent border-opacity-25 hover-scale" style="height: 220px; transition: transform 0.5s ease;">
+                                                    <span class="font-serif text-chocolate fs-4 fw-bold">{{ $post->title }}</span>
+                                                </div>
+                                            </a>
                                         @endif
                                         
                                         @if($post->category)

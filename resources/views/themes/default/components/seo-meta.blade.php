@@ -18,6 +18,12 @@
 @else
     <link rel="canonical" href="{{ url()->current() }}">
 @endif
+@php
+    $siteFavicon = \App\Models\Setting::get('site_favicon');
+@endphp
+@if($siteFavicon)
+    <link rel="icon" href="{{ asset('storage/' . $siteFavicon) }}">
+@endif
 
 {{-- Open Graph --}}
 <meta property="og:type" content="{{ $seo?->og_type ?? 'website' }}">

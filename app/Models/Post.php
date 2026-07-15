@@ -27,6 +27,11 @@ class Post extends Model
         return $this->belongsTo(Media::class, 'featured_image_id');
     }
 
+    public function getFeaturedImageAttribute()
+    {
+        return $this->featuredImage ? 'storage/' . $this->featuredImage->file_path : null;
+    }
+
     protected $casts = [
         'published_at' => 'datetime',
         'expired_at'   => 'datetime',
