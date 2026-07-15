@@ -1,0 +1,217 @@
+[
+    {
+        "type": "carousel",
+        "data": {
+            "variant": "default",
+            "title": "Hero Slider",
+            "items": [
+                {
+                    "title": "Rayakan momen terindah hidup Anda",
+                    "description": "Dapoer Cendana menghadirkan kemewahan ruang, suasana elegan, dan layanan premium untuk hari pernikahan impian Anda.",
+                    "image_id": null,
+                    "subtitle": null,
+                    "button_text": null,
+                    "button_url": null
+                },
+                {
+                    "title": "Ruang pertemuan representatif & modern",
+                    "description": "Tingkatkan produktivitas bisnis Anda dengan ruang rapat premium yang didukung fasilitas audio-visual mutakhir dan hidangan kelas dunia.",
+                    "image_id": null,
+                    "subtitle": null,
+                    "button_text": null,
+                    "button_url": null
+                },
+                {
+                    "title": "Perpaduan cita rasa autentik & elegansi",
+                    "description": "Manjakan selera Anda dengan sajian kuliner bercita rasa istimewa racikan Chef profesional kami di suasana restoran yang hangat.",
+                    "image_id": null,
+                    "subtitle": null,
+                    "button_text": null,
+                    "button_url": null
+                }
+            ],
+            "description": null
+        }
+    },
+    {
+        "type": "about",
+        "data": {
+            "variant": "default",
+            "title": "Sinergi antara Kuliner Berkelas dan Ruang Acara Eksklusif",
+            "content": "<p>Berlokasi strategis, <strong>Dapoer Cendana<\/strong> merupakan destinasi prima yang memadukan keindahan restoran bernuansa estetika kolonial-modern dengan fungsionalitas ruang serbaguna tingkat tinggi.<\/p><p>Kami menyediakan area elegan untuk berbagai perhelatan istimewa Anda, mulai dari pernikahan megah, rapat bisnis korporat yang kondusif, pelatihan profesional, hingga pengajian keluarga besar yang khidmat. Kami hadir untuk memastikan setiap momen berharga Anda di dapoercendana.id berjalan dengan sempurna.<\/p>",
+            "subtitle": null,
+            "image_id": 1,
+            "button_text": "Hubungi",
+            "button_url": "#"
+        }
+    },
+    {
+        "type": "feature",
+        "data": {
+            "variant": "default",
+            "title": "Pilihan Ruang & Acara Sesuai Kebutuhan Anda",
+            "subtitle": "Layanan Serbaguna Kami",
+            "features": [
+                {
+                    "title": "Wedding Hall",
+                    "description": "Rayakan perhelatan janji suci romantis Anda dalam suasana megah yang intim dan artistik bersama keluarga besar.",
+                    "icon": "champagne-glasses",
+                    "image_id": null,
+                    "url": null
+                },
+                {
+                    "title": "Meeting Space",
+                    "description": "Tingkatkan performa bisnis Anda melalui ruang pertemuan representatif dengan kelengkapan mutakhir.",
+                    "icon": "briefcase",
+                    "image_id": null,
+                    "url": null
+                },
+                {
+                    "title": "Training Center",
+                    "description": "Konfigurasi ruangan fleksibel yang ramah untuk edukasi, seminar interaktif, dan sertifikasi tim.",
+                    "icon": "graduation-cap",
+                    "image_id": null,
+                    "url": null
+                },
+                {
+                    "title": "Pengajian & Aqiqah",
+                    "description": "Selenggarakan doa bersama, tasyakuran aqiqah, dan arisan keluarga dalam nuansa bersih nan menenangkan.",
+                    "icon": "mosque",
+                    "image_id": null,
+                    "url": null
+                }
+            ]
+        }
+    },
+    {
+        "type": "price_table",
+        "data": {
+            "variant": "default",
+            "title": "Cita Rasa Dapoer Cendana",
+            "categories": [
+                {
+                    "title": "Makanan Utama & Signature",
+                    "items": [
+                        {
+                            "name": "Nasi Goreng Cendana Royal",
+                            "price": "IDR 85K",
+                            "description": null
+                        },
+                        {
+                            "name": "Sop Buntut Garang Asam",
+                            "price": "IDR 125K",
+                            "description": null
+                        },
+                        {
+                            "name": "Bebek Goreng Rempah Madura",
+                            "price": "IDR 95K",
+                            "description": null
+                        },
+                        {
+                            "name": "Gurame Bakar Sambal Cendana",
+                            "price": "IDR 110K",
+                            "description": null
+                        }
+                    ],
+                    "icon": null,
+                    "image_id": null
+                },
+                {
+                    "title": "Pencuci Mulut & Minuman",
+                    "items": [
+                        {
+                            "name": "Es Dawet Ayu Cendana",
+                            "price": "IDR 35K",
+                            "description": null
+                        },
+                        {
+                            "name": "Ketan Durian Lumer",
+                            "price": "IDR 45K",
+                            "description": null
+                        },
+                        {
+                            "name": "Wedang Secang Rempah Wangi",
+                            "price": "IDR 30K",
+                            "description": null
+                        },
+                        {
+                            "name": "Cendana Iced Herbal Tea",
+                            "price": "IDR 28K",
+                            "description": null
+                        }
+                    ],
+                    "icon": null,
+                    "image_id": null
+                }
+            ],
+            "description": null
+        }
+    },
+    {
+        "type": "testimonial",
+        "data": {
+            "variant": "default",
+            "title": "Testimonials",
+            "source": "manual",
+            "manual_testimonials": [
+                {
+                    "name": "H. Rahmad Syahputra",
+                    "content": "Pengalaman luar biasa saat menyelenggarakan pernikahan adik saya di Dapoer Cendana. Makanan prasmanan sangat lezat, koordinasi staf sangat profesional sehingga tidak butuh dekorasi berlebihan.",
+                    "role": null,
+                    "company": null,
+                    "avatar_id": null,
+                    "rating": null
+                },
+                {
+                    "name": "Kusuma Wardhani, M.B.A.",
+                    "content": "Kami menyewa ruang meeting selama 3 hari berturut-turut untuk rapat direksi tahunan. Koneksi internetnya sangat cepat dan stabil, fasilitas audio-visual mutakhir.",
+                    "role": null,
+                    "company": null,
+                    "avatar_id": null,
+                    "rating": null
+                },
+                {
+                    "name": "Budi Hartono",
+                    "content": "Pelatihan tim penjualan kami berjalan dengan sangat sukses. Layout ruang training dapat disesuaikan dengan kebutuhan interaktif kami.",
+                    "role": null,
+                    "company": null,
+                    "avatar_id": null,
+                    "rating": null
+                },
+                {
+                    "name": "Ibu Hj. Aminah Salim",
+                    "content": "Tempat terbaik untuk syukuran keluarga. Karpet lesehan yang disediakan sangat tebal, bersih, dan wangi. Sistem tata suaranya juga jernih.",
+                    "role": null,
+                    "company": null,
+                    "avatar_id": null,
+                    "rating": null
+                }
+            ],
+            "description": null,
+            "subtitle": null,
+            "bg_image_id": null
+        }
+    },
+    {
+        "type": "pricing",
+        "data": {
+            "variant": "default",
+            "title": "Promo Khusus dapoercendana.id",
+            "pricing_ids": [
+                1,
+                2,
+                3
+            ],
+            "description": null
+        }
+    },
+    {
+        "type": "form",
+        "data": {
+            "variant": "default",
+            "title": "Hubungi Dapoer Cendana",
+            "form_id": 1,
+            "description": null
+        }
+    }
+]
